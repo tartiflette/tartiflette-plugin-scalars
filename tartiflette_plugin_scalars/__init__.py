@@ -1,13 +1,12 @@
-from tartiflette import Directive, Scalar, Resolver
+from tartiflette import Scalar
 
+from tartiflette_plugin_scalars.email_address import EmailAddress
 
 _SDL = """
-Place your SDL here
+scalar EmailAddress
 """
 
-# Create your directive/scalar here
 
 async def bake(schema_name, config):
-    # Do you magic here, instance and decorate your directive scalar and so on
-
+    Scalar(name="EmailAddress", schema_name=schema_name)(EmailAddress(config))
     return _SDL
