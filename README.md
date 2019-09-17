@@ -1,3 +1,3 @@
-# tartiflette-plugin-tartiflette-plugin-scalar
+# tartiflette-plugin-scalars
 
 Tartiflette plugin providing common scalars

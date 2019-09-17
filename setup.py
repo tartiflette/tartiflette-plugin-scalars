@@ -25,12 +25,12 @@ def _read_file(filename):
 
 
 setup(
-    name="tartiflette-plugin-tartiflette-plugin-scalar",
+    name="tartiflette-plugin-scalars",
     version=_VERSION,
     description="Tartiflette plugin providing common scalars",
     long_description=_read_file("README.md"),
     long_description_content_type="text/markdown",
-    url="https://github.com/dailymotion/tartiflette-plugin-scalar",
+    url="https://github.com/dailymotion/tartiflette-plugin-scalars",
     author="Alice Girard Guittard",
     author_email="alice.girardguittard@dailymotion.com",
     license="MIT",

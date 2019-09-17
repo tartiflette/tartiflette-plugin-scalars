@@ -1,4 +1,4 @@
-# tartiflette-plugin-tartiflette-plugin-scalar
+# tartiflette-plugin-scalars
 
 ## Released Versions
 
