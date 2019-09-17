@@ -8,5 +8,5 @@ scalar EmailAddress
 
 
 async def bake(schema_name, config):
-    Scalar(name="EmailAddress", schema_name=schema_name)(EmailAddress(config))
+    Scalar(name="EmailAddress", schema_name=schema_name)(EmailAddress())
     return _SDL
