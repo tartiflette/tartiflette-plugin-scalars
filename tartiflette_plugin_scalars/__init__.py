@@ -7,6 +7,6 @@ scalar EmailAddress
 """
 
 
-async def bake(schema_name, config):
+async def bake(schema_name, config):  # pylint: disable=unused-argument
     Scalar(name="EmailAddress", schema_name=schema_name)(EmailAddress())
     return _SDL
