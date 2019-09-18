@@ -10,7 +10,7 @@ format-import:
 
 .PHONY: format
 format: format-import
-	black -l 79 --py36 tartiflette_plugin_scalars tests setup.py
+	black -l 79 --target-version py36 tartiflette_plugin_scalars tests setup.py
 
 .PHONY: check-import
 check-import:
@@ -18,7 +18,7 @@ check-import:
 
 .PHONY: check-format
 check-format:
-	black -l 79 --py36 --check tartiflette_plugin_scalars tests setup.py
+	black -l 79 --target-version py36 --check tartiflette_plugin_scalars tests setup.py
 
 .PHONY: style
 style: check-format check-import

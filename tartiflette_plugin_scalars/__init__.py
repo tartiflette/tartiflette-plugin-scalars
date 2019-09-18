@@ -1,13 +1,19 @@
-from tartiflette import Directive, Scalar, Resolver
+from tartiflette import Scalar
 
+_SCALAR_TEMPLATE = "scalar {0}"
 
-_SDL = """
-Place your SDL here
-"""
-
-# Create your directive/scalar here
 
 async def bake(schema_name, config):
-    # Do you magic here, instance and decorate your directive scalar and so on
+    scalars = []
 
-    return _SDL
+    email_address_config = config.get("email_address", {})
+    if email_address_config.get("enabled") is not False:
+        from tartiflette_plugin_scalars.email_address import EmailAddress
+
+        email_address_name = email_address_config.get("name") or "EmailAddress"
+        Scalar(name=email_address_name, schema_name=schema_name)(
+            EmailAddress()
+        )
+        scalars.append(_SCALAR_TEMPLATE.format(email_address_name))
+
+    return "\n".join(scalars)
