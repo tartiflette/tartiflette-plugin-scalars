@@ -11,7 +11,7 @@ _TEST_REQUIRE = [
     "pylint==2.3.0",
     "xenon==0.5.5",
     "black==18.9b0",
-    "isort==4.3.4",
+    "isort==4.3.21",
 ]
 
 _VERSION = "0.0.1"
