@@ -1,9 +1,4 @@
 
-.PHONY: init
-init:
-	git submodule init
-	git submodule update
-
 .PHONY: format-import
 format-import:
 	isort -rc tartiflette_plugin_scalars/. tests/. setup.py
@@ -23,10 +18,6 @@ check-format:
 .PHONY: style
 style: check-format check-import
 	pylint tartiflette_plugin_scalars --rcfile=pylintrc
-
-.PHONY: complexity
-complexity:
-	xenon --max-absolute B --max-modules B --max-average A tartiflette_plugin_scalars
 
 .PHONY: test-unit
 test-unit: clean

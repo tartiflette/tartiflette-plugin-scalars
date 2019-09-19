@@ -5,13 +5,12 @@ import sys
 from setuptools import find_packages, setup
 
 _TEST_REQUIRE = [
-    "pytest==4.5.0",
-    "pytest-cov==2.6.1",
+    "pytest==5.1.2",
+    "pytest-cov==2.7.1",
     "pytest-asyncio==0.10.0",
-    "pylint==2.3.0",
-    "xenon==0.5.5",
-    "black==18.9b0",
-    "isort==4.3.4",
+    "pylint==2.3.1",
+    "black==19.3b0",
+    "isort==4.3.21",
 ]
 
 _VERSION = "0.0.1"
@@ -42,7 +41,7 @@ setup(
     ],
     keywords="api graphql protocol tartiflette",
     packages=_PACKAGES,
-    install_requires=["tartiflette==1.0.0rc2"],
+    install_requires=["tartiflette==1.0.0rc3"],
     tests_require=_TEST_REQUIRE,
     extras_require={"test": _TEST_REQUIRE},
     include_package_data=True,
