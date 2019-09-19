@@ -1,11 +1,7 @@
 # tartiflette-plugin-scalars
 
-## Released Versions
-
-### [x.y.Z]
-
-#### Fixed
-
-#### Changed
+### [Unreleased]
 
 #### Added
+
+* EmailAddress scalar
