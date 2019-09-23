@@ -3,10 +3,7 @@ import pytest
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import DirectiveDefinitionNode, StringValueNode
 
-from tartiflette_plugin_scalars.email_address import (
-    EmailAddress,
-    _check_email_address,
-)
+from tartiflette_plugin_scalars.email_address import EmailAddress
 
 
 @pytest.mark.parametrize(
