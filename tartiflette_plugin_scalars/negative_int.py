@@ -8,37 +8,37 @@ from tartiflette.language.ast import (
 )
 
 
-def _parse_negative_float(value):
-    if isinstance(value, (str, int)) and not isinstance(value, bool):
-        value = float(value)
-    if not isinstance(value, float):
+def _parse_negative_int(value):
+    if isinstance(value, (str, float)):
+        value = int(value)
+    if not isinstance(value, int) or isinstance(value, bool):
         raise TypeError(
-            f"NegativeFloat cannot represent values other than strings and numbers: < {value} >"
+            f"NegativeInt cannot represent values other than strings and numbers: < {value} >"
         )
     if value >= 0:
         raise ValueError(
-            f"NegativeFloat cannot represent values above or equal to 0: < {value} >"
+            f"NegativeInt cannot represent values above 0: < {value} >"
         )
     return value
 
 
-class NegativeFloat:
+class NegativeInt:
     """
-    Scalar which handles negative floating point numbers
+    Scalar which handles negative integers
     """
 
     @staticmethod
-    def parse_literal(ast: "ValueNode") -> Union[float, "UNDEFINED_VALUE"]:
+    def parse_literal(ast: "ValueNode") -> Union[int, "UNDEFINED_VALUE"]:
         """
         Coerce the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
-        :return: the value if it's can be parsed as a negative floating point number, UNDEFINED_VALUE otherwise
-        :rtype: Union[float, UNDEFINED_VALUE]
+        :return: the value if it can be parsed as a negative integer, UNDEFINED_VALUE otherwise
+        :rtype: Union[int, UNDEFINED_VALUE]
         """
         if isinstance(ast, (FloatValueNode, StringValueNode, IntValueNode)):
             try:
-                return _parse_negative_float(ast.value)
+                return _parse_negative_int(ast.value)
             except (TypeError, ValueError):
                 return UNDEFINED_VALUE
         return UNDEFINED_VALUE
@@ -49,12 +49,12 @@ class NegativeFloat:
         Coerce the input value
         :param value: the value to coerce
         :type value: Union[str, int, float]
-        :return: the value if it's a negative float
+        :return: the value if it's a negative int
         :rtype: Union[str, UNDEFINED_VALUE]
-        :raises TypeError: if the value isn't parseable as a float
+        :raises TypeError: if the value isn't parseable as an int
         :raises ValueError: if the value isn't negative
         """
-        return _parse_negative_float(value)
+        return _parse_negative_int(value)
 
     @staticmethod
     def coerce_output(value: Union[str, int, float]) -> str:
@@ -62,9 +62,9 @@ class NegativeFloat:
         Coerce the output value
         :param value: the value to coerce
         :type value: Any
-        :return: the value if it's a negative float
+        :return: the value if it's a negative int
         :rtype: str
-        :raises TypeError: if the value isn't parseable as a float
+        :raises TypeError: if the value isn't parseable as an int
         :raises ValueError: if the value isn't negative
         """
-        return _parse_negative_float(value)
+        return _parse_negative_int(value)

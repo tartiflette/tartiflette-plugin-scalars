@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any, Union #pylint: disable=unused-import
+from typing import Any, Union  # pylint: disable=unused-import
 
 from dateutil.parser import isoparse
 from tartiflette.constants import UNDEFINED_VALUE
