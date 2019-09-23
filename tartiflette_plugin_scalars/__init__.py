@@ -8,6 +8,7 @@ AVAILABLE_SCALARS = [
     ("datetime", "DateTime"),
     ("negative_float", "NegativeFloat"),
     ("negative_int", "NegativeInt"),
+    ("non_negative_float", "NonNegativeFloat"),
 ]
 
 
