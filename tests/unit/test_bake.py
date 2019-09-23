@@ -6,12 +6,17 @@ from tartiflette_plugin_scalars import _generate_scalars
 @pytest.mark.parametrize(
     "schema_name,config,scalars",
     [
-        ("empty_conf", {}, ["scalar EmailAddress", "scalar DateTime"]),
+        (
+            "empty_conf",
+            {},
+            ["scalar EmailAddress", "scalar DateTime", "scalar NegativeFloat"],
+        ),
         (
             "disable_all",
             {
                 "email_address": {"enabled": False},
                 "datetime": {"enabled": False},
+                "negative_float": {"enabled": False},
             },
             [],
         ),
@@ -20,16 +25,22 @@ from tartiflette_plugin_scalars import _generate_scalars
             {
                 "email_address": {"enabled": True},
                 "datetime": {"enabled": True},
+                "negative_float": {"enabled": True},
             },
-            ["scalar EmailAddress", "scalar DateTime"],
+            ["scalar EmailAddress", "scalar DateTime", "scalar NegativeFloat"],
         ),
         (
             "rename_all",
             {
                 "email_address": {"name": "MyEmailAddress"},
                 "datetime": {"name": "MyDateTime"},
+                "negative_float": {"name": "NegativeFloat"},
             },
-            ["scalar MyEmailAddress", "scalar MyDateTime"],
+            [
+                "scalar MyEmailAddress",
+                "scalar MyDateTime",
+                "scalar NegativeFloat",
+            ],
         ),
     ],
 )

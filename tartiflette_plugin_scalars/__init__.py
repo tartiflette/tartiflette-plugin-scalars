@@ -6,6 +6,8 @@ _SCALAR_TEMPLATE = "scalar {0}"
 AVAILABLE_SCALARS = [
     ("email_address", "EmailAddress"),
     ("datetime", "DateTime"),
+    ("negative_float", "NegativeFloat"),
+    ("negative_int", "NegativeInt"),
 ]
 
 
