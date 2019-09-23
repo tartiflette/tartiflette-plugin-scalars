@@ -44,7 +44,7 @@ class NegativeFloat:
         return UNDEFINED_VALUE
 
     @staticmethod
-    def coerce_input(value: Union[str, int, float]) -> str:
+    def coerce_input(value: Union[str, int, float]) -> float:
         """
         Coerce the input value
         :param value: the value to coerce
@@ -57,7 +57,7 @@ class NegativeFloat:
         return _parse_negative_float(value)
 
     @staticmethod
-    def coerce_output(value: Union[str, int, float]) -> str:
+    def coerce_output(value: Union[str, int, float]) -> float:
         """
         Coerce the output value
         :param value: the value to coerce
