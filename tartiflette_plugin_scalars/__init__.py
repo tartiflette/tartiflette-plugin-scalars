@@ -12,6 +12,7 @@ AVAILABLE_SCALARS = [
     ("non_negative_int", "NonNegativeInt"),
     ("non_positive_float", "NonPositiveFloat"),
     ("non_positive_int", "NonPositiveInt"),
+    ("positive_float", "PositiveFloat"),
 ]
 
 
