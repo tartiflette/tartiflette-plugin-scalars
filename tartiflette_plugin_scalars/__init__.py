@@ -16,6 +16,7 @@ AVAILABLE_SCALARS = [
     ("positive_int", "PositiveInt"),
     ("long", "Long"),
     ("big_int", "BigInt"),
+    ("unsigned_int", "UnsignedInt"),
 ]
 
 
