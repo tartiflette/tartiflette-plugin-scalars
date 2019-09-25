@@ -1,4 +1,4 @@
-from typing import Any, Union  # pylint: disable=unused-import
+from typing import Union  # pylint: disable=unused-import
 
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import (
