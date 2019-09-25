@@ -15,6 +15,7 @@ AVAILABLE_SCALARS = [
     ("positive_float", "PositiveFloat"),
     ("positive_int", "PositiveInt"),
     ("long", "Long"),
+    ("big_int", "BigInt"),
 ]
 
 

@@ -21,6 +21,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar PositiveFloat",
                 "scalar PositiveInt",
                 "scalar Long",
+                "scalar BigInt",
             ],
         ),
         (
@@ -37,6 +38,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "positive_float": {"enabled": False},
                 "positive_int": {"enabled": False},
                 "long": {"enabled": False},
+                "big_int": {"enabled": False},
             },
             [],
         ),
@@ -54,6 +56,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "positive_float": {"enabled": True},
                 "positive_int": {"enabled": True},
                 "long": {"enabled": True},
+                "big_int": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -67,6 +70,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar PositiveFloat",
                 "scalar PositiveInt",
                 "scalar Long",
+                "scalar BigInt",
             ],
         ),
         (
@@ -83,6 +87,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "positive_float": {"name": "MyPositiveFloat"},
                 "positive_int": {"name": "MyPositiveInt"},
                 "long": {"name": "MyLong"},
+                "big_int": {"name": "MyBigInt"},
             },
             [
                 "scalar MyEmailAddress",
@@ -96,6 +101,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyPositiveFloat",
                 "scalar MyPositiveInt",
                 "scalar MyLong",
+                "scalar MyBigInt",
             ],
         ),
     ],
