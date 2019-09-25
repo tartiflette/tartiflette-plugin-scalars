@@ -50,7 +50,7 @@ class NegativeInt:
         :param value: the value to coerce
         :type value: Union[str, int, float]
         :return: the value if it's a negative int
-        :rtype: Union[str, UNDEFINED_VALUE]
+        :rtype: int
         :raises TypeError: if the value isn't parseable as an int
         :raises ValueError: if the value isn't negative
         """
@@ -63,7 +63,7 @@ class NegativeInt:
         :param value: the value to coerce
         :type value: Any
         :return: the value if it's a negative int
-        :rtype: str
+        :rtype: itn
         :raises TypeError: if the value isn't parseable as an int
         :raises ValueError: if the value isn't negative
         """

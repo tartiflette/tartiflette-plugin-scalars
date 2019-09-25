@@ -50,7 +50,7 @@ class NonNegativeFloat:
         :param value: the value to coerce
         :type value: Union[str, int, float]
         :return: the value if it's a non negative float
-        :rtype: Union[str, UNDEFINED_VALUE]
+        :rtype: float
         :raises TypeError: if the value isn't parseable as a float
         :raises ValueError: if the value is negative
         """
@@ -63,7 +63,7 @@ class NonNegativeFloat:
         :param value: the value to coerce
         :type value: Any
         :return: the value if it's a non negative float
-        :rtype: str
+        :rtype: int
         :raises TypeError: if the value isn't parseable as a float
         :raises ValueError: if the value is negative
         """

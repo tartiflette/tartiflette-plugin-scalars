@@ -46,6 +46,7 @@ class DateTime:
         :param value: the value to coerce
         :type value: Union[str, int]
         :return: the value as a datetime object if it can be parsed
+        :rtype: datetime
         :raises TypeError: if the value isn't a string or int
         :raises ValueError: if the value isn't convertible to a datetime
         :raises OverflowError: if the value is an int too large to be a unix timestamp
@@ -59,6 +60,7 @@ class DateTime:
         :param value: the value to coerce
         :type value: datetime
         :return: the value as a datetime object if it can be parsed
+        :rtype: datetime
         """
         if isinstance(value, datetime):
             return value.isoformat()
