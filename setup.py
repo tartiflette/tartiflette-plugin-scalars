@@ -41,7 +41,7 @@ setup(
     ],
     keywords="api graphql protocol tartiflette",
     packages=_PACKAGES,
-    install_requires=["tartiflette==1.0.0rc3"],
+    install_requires=["tartiflette==1.0.0"],
     tests_require=_TEST_REQUIRE,
     extras_require={"test": _TEST_REQUIRE},
     include_package_data=True,
