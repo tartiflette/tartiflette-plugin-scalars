@@ -10,7 +10,7 @@ def _parse_date(value: Union[int, str]) -> datetime:
     if isinstance(value, datetime):
         return value
     if isinstance(value, int) and not isinstance(value, bool):
-        return datetime.fromtimestamp(value)
+        return datetime.utcfromtimestamp(value)
     if isinstance(value, str):
         return isoparse(value)
     raise TypeError(

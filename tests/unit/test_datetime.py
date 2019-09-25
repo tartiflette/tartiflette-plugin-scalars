@@ -25,7 +25,7 @@ from tartiflette_plugin_scalars.datetime import DateTime
             None,
             datetime.datetime(2019, 9, 20, 14, 30, 28, tzinfo=tzutc()),
         ),
-        (1568988000, None, datetime.datetime(2019, 9, 20, 16, 0, 0)),
+        (1568988000, None, datetime.datetime(2019, 9, 20, 14, 0, 0)),
         (
             datetime.datetime(2019, 9, 9, 16, 0, 0),
             None,
@@ -71,7 +71,7 @@ def test_coerce_output(input_val, output_val):
         ),
         (
             IntValueNode(value=1568988000),
-            datetime.datetime(2019, 9, 20, 16, 0, 0),
+            datetime.datetime(2019, 9, 20, 14, 0, 0),
         ),
     ],
 )
