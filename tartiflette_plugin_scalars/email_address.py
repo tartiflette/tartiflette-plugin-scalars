@@ -48,7 +48,7 @@ class EmailAddress:
         :param value: the value to coerce
         :type value: Any
         :return: the value if it's an email
-        :rtype: Union[str, UNDEFINED_VALUE]
+        :rtype: str
         :raises TypeError: if the value isn't a string
         :raises ValueError: if the value isn't an email
         """

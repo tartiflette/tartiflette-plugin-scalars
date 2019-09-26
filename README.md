@@ -27,11 +27,6 @@ Implemented scalars:
 | Name             | Description                                       |
 |------------------|---------------------------------------------------|
 | EmailAddress     | Represents an email addresses                     |
-
-Coming soon scalars:
-
-| Name             | Description                                       |
-|------------------|---------------------------------------------------|
 | DateTime         | Represents a date and time object                 |
 | NegativeFloat    | Represents a negative floating point number       |
 | NegativeInt      | Represents a negative integer                     |
@@ -41,11 +36,17 @@ Coming soon scalars:
 | PositiveInt      | Represents a positive integer                     |
 | NonPositiveFloat | Represents a negative or 0 floating point number  |
 | NonPositiveInt   | Represents a negative or 0 integer                |
+| Long             | Represents integers between 0 and 2^63            |
+| BigInt           | Represents arbitrary length integers              |
+| UnsignedInt      | Represents integers between 0 and 2^32            |
+
+Coming soon scalars:
+
+| Name             | Description                                       |
+|------------------|---------------------------------------------------|
 | PhoneNumber      | Represents a phone number                         |
 | PostalCode       | Represents a postal code                          |
 | URL              | Represents an Uniform Resource Locator            |
-| Long             | Represents integers between 0 and 2^64            |
-| BigInt           | Represents integers above 2^64                    |
 | GUID             | Represents a Globally Unique IDentifier           |
 | HexColorCode     | Hexadecimal representation of a color             |
 | HSL              | Hue, Saturation and Lightness of a color          |

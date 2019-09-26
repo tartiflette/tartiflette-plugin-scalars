@@ -1,26 +1,32 @@
 import pytest
 
 from tartiflette.constants import UNDEFINED_VALUE
-from tartiflette.language.ast import DirectiveDefinitionNode, StringValueNode
+from tartiflette.language.ast import (
+    DirectiveDefinitionNode,
+    FloatValueNode,
+    IntValueNode,
+    StringValueNode,
+)
 
-from tartiflette_plugin_scalars.email_address import EmailAddress
+from tartiflette_plugin_scalars.non_negative_int import NonNegativeInt
 
 
 @pytest.mark.parametrize(
     "input_val,exception,output_val",
     [
-        (1, TypeError, None),
         (False, TypeError, None),
         ("", ValueError, None),
-        ("dailymotion.com", ValueError, None),
-        ("alice.girardguittard@dm.com", None, "alice.girardguittard@dm.com"),
-        ("maxime@dm.com", None, "maxime@dm.com"),
-        ("tribe-scale@dm.com", None, "tribe-scale@dm.com"),
-        ("alice.girard+guittard@dm.com", None, "alice.girard+guittard@dm.com"),
+        ("nok", ValueError, None),
+        ("-1", ValueError, None),
+        (-2, ValueError, None),
+        (-3.5, ValueError, None),
+        ("12", None, 12),
+        (12, None, 12),
+        (1.5, None, 1),
     ],
 )
 def test_coerce_input_output(input_val, exception, output_val):
-    scalar = EmailAddress()
+    scalar = NonNegativeInt()
     if exception:
         with pytest.raises(exception):
             scalar.coerce_input(input_val)
@@ -42,15 +48,13 @@ def test_coerce_input_output(input_val, exception, output_val):
         ),
         (StringValueNode(value="nok"), UNDEFINED_VALUE),
         (StringValueNode(value=None), UNDEFINED_VALUE),
-        (
-            StringValueNode(value="alice.girardguittard@dm.com"),
-            "alice.girardguittard@dm.com",
-        ),
-        (
-            StringValueNode(value="alice.girard-guittard@dm.com"),
-            "alice.girard-guittard@dm.com",
-        ),
+        (StringValueNode(value="-12.3"), UNDEFINED_VALUE),
+        (IntValueNode(value=-15), UNDEFINED_VALUE),
+        (IntValueNode(value=0), 0),
+        (FloatValueNode(value=16.0), 16),
+        (IntValueNode(value=15), 15),
+        (StringValueNode(value="15"), 15),
     ],
 )
-def test_parse_literal_email_address(input_val, output_val):
-    assert EmailAddress().parse_literal(input_val) == output_val
+def test_parse_literal(input_val, output_val):
+    assert NonNegativeInt().parse_literal(input_val) == output_val
