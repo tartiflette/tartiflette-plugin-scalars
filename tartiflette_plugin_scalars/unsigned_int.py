@@ -7,6 +7,9 @@ from tartiflette.language.ast import (
     StringValueNode,
 )
 
+_MAX_UNSIGNED_INT = 4294967296  # 2^32
+_MIN_UNSIGNED_INT = 0
+
 
 def _parse_unsigned_int(value):
     if isinstance(value, (str, float)):
@@ -15,11 +18,11 @@ def _parse_unsigned_int(value):
         raise TypeError(
             f"UnsignedInt cannot represent values other than strings and numbers: < {value} >"
         )
-    if value >= 2 ** 32:
+    if value >= _MAX_UNSIGNED_INT:
         raise ValueError(
             f"UnsignedInt cannot represent values above or equal to 2^32: < {value} >"
         )
-    if value < 0:
+    if value < _MIN_UNSIGNED_INT:
         raise ValueError(
             f"UnsignedInt cannot represent values below 0: < {value} >"
         )

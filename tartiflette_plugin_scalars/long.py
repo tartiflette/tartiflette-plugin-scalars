@@ -7,6 +7,9 @@ from tartiflette.language.ast import (
     StringValueNode,
 )
 
+_MAX_LONG = 9223372036854775808  # 2^63
+_MIN_LONG = -9223372036854775808  # -2^63
+
 
 def _parse_long(value):
     if isinstance(value, (str, float)):
@@ -15,11 +18,11 @@ def _parse_long(value):
         raise TypeError(
             f"long cannot represent values other than strings and numbers: < {value} >"
         )
-    if value >= 2 ** 63:
+    if value >= _MAX_LONG:
         raise ValueError(
             f"Long cannot represent values above or equal to 2^63: < {value} >"
         )
-    if value < -(2 ** 63):
+    if value < _MIN_LONG:
         raise ValueError(
             f"Long cannot represent values below 2^63 : < {value} >"
         )
