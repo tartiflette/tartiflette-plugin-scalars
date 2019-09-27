@@ -17,6 +17,7 @@ AVAILABLE_SCALARS = [
     ("long", "Long"),
     ("big_int", "BigInt"),
     ("unsigned_int", "UnsignedInt"),
+    ("phone_number", "PhoneNumber"),
 ]
 
 

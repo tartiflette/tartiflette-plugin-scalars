@@ -23,6 +23,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar Long",
                 "scalar BigInt",
                 "scalar UnsignedInt",
+                "scalar PhoneNumber",
             ],
         ),
         (
@@ -41,6 +42,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "long": {"enabled": False},
                 "big_int": {"enabled": False},
                 "unsigned_int": {"enabled": False},
+                "phone_number": {"enabled": False},
             },
             [],
         ),
@@ -60,6 +62,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "long": {"enabled": True},
                 "big_int": {"enabled": True},
                 "unsigned_int": {"enabled": True},
+                "phone_number": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -75,6 +78,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar Long",
                 "scalar BigInt",
                 "scalar UnsignedInt",
+                "scalar PhoneNumber",
             ],
         ),
         (
@@ -93,6 +97,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "long": {"name": "MyLong"},
                 "big_int": {"name": "MyBigInt"},
                 "unsigned_int": {"name": "MyUnsignedInt"},
+                "phone_number": {"name": "MyPhoneNumber"},
             },
             [
                 "scalar MyEmailAddress",
@@ -108,6 +113,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyLong",
                 "scalar MyBigInt",
                 "scalar MyUnsignedInt",
+                "scalar MyPhoneNumber",
             ],
         ),
     ],
