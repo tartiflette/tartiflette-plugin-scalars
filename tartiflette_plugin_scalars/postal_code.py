@@ -1,6 +1,6 @@
 import re
 
-from typing import Any, Union
+from typing import Union
 
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
@@ -171,7 +171,7 @@ _POSTAL_CODE_REGEXES = [  # source : https://gist.github.com/paulredmond/57bcae0
 ]
 
 
-def _check_postal_code(value: Any) -> str:
+def _check_postal_code(value: str) -> str:
     if not isinstance(value, str):
         raise TypeError(
             f"PostalCode cannot represent a non string value: < {value} >"
@@ -213,7 +213,7 @@ class PostalCode:
         """
         Coerce the input value
         :param value: the value to coerce
-        :type value: Any
+        :type value: str
         :return: the value if it's a postal code
         :rtype: str
         :raises TypeError: if the value isn't a string
@@ -226,7 +226,7 @@ class PostalCode:
         """
         Coerce the output value
         :param value: the value to coerce
-        :type value: Any
+        :type value: str
         :return: the value if it's a postal code
         :rtype: str
         :raises TypeError: if the value isn't a string
