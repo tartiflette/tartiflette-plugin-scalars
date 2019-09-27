@@ -22,6 +22,7 @@ AVAILABLE_SCALARS = [
     ("url", "URL"),
     ("guid", "GUID"),
     ("hex_color_code", "HexColorCode"),
+    ("hsl", "HSL"),
 ]
 
 
