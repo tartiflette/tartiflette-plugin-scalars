@@ -19,6 +19,7 @@ AVAILABLE_SCALARS = [
     ("unsigned_int", "UnsignedInt"),
     ("phone_number", "PhoneNumber"),
     ("postal_code", "PostalCode"),
+    ("url", "URL"),
 ]
 
 
