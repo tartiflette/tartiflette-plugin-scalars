@@ -21,6 +21,7 @@ AVAILABLE_SCALARS = [
     ("postal_code", "PostalCode"),
     ("url", "URL"),
     ("guid", "GUID"),
+    ("hex_color_code", "HexColorCode"),
 ]
 
 

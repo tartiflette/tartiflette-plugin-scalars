@@ -27,6 +27,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar PostalCode",
                 "scalar URL",
                 "scalar GUID",
+                "scalar HexColorCode",
             ],
         ),
         (
@@ -49,6 +50,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "postal_code": {"enabled": False},
                 "url": {"enabled": False},
                 "guid": {"enabled": False},
+                "hex_color_code": {"enabled": False},
             },
             [],
         ),
@@ -71,6 +73,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "phone_number": {"enabled": True},
                 "url": {"enabled": True},
                 "guid": {"enabled": True},
+                "hex_color_code": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -90,6 +93,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar PostalCode",
                 "scalar URL",
                 "scalar GUID",
+                "scalar HexColorCode",
             ],
         ),
         (
@@ -112,6 +116,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "postal_code": {"name": "MyPostalCode"},
                 "url": {"name": "MyURL"},
                 "guid": {"name": "MyGUID"},
+                "hex_color_code": {"name": "MyHexColorCode"},
             },
             [
                 "scalar MyEmailAddress",
@@ -131,6 +136,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyPostalCode",
                 "scalar MyURL",
                 "scalar MyGUID",
+                "scalar MyHexColorCode",
             ],
         ),
     ],
