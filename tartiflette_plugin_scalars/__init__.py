@@ -20,6 +20,7 @@ AVAILABLE_SCALARS = [
     ("phone_number", "PhoneNumber"),
     ("postal_code", "PostalCode"),
     ("url", "URL"),
+    ("guid", "GUID"),
 ]
 
 
