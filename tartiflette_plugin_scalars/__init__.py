@@ -25,6 +25,7 @@ AVAILABLE_SCALARS = [
     ("hsl", "HSL"),
     ("hsla", "HSLA"),
     ("rgb", "RGB"),
+    ("rgba", "RGBA"),
 ]
 
 
