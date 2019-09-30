@@ -24,6 +24,7 @@ AVAILABLE_SCALARS = [
     ("hex_color_code", "HexColorCode"),
     ("hsl", "HSL"),
     ("hsla", "HSLA"),
+    ("rgb", "RGB"),
 ]
 
 
