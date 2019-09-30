@@ -32,6 +32,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar HSLA",
                 "scalar RGB",
                 "scalar RGBA",
+                "scalar IPv4",
             ],
         ),
         (
@@ -59,6 +60,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "hsla": {"enabled": False},
                 "rgb": {"enabled": False},
                 "rgba": {"enabled": False},
+                "ipv4": {"enabled": False},
             },
             [],
         ),
@@ -86,6 +88,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "hsla": {"enabled": True},
                 "rgb": {"enabled": True},
                 "rgba": {"enabled": True},
+                "ipv4": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -110,6 +113,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar HSLA",
                 "scalar RGB",
                 "scalar RGBA",
+                "scalar IPv4",
             ],
         ),
         (
@@ -137,6 +141,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "hsla": {"name": "MyHSLA"},
                 "rgb": {"name": "MyRGB"},
                 "rgba": {"name": "MyRGBA"},
+                "ipv4": {"name": "MyIPv4"},
             },
             [
                 "scalar MyEmailAddress",
@@ -161,6 +166,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyHSLA",
                 "scalar MyRGB",
                 "scalar MyRGBA",
+                "scalar MyIPv4",
             ],
         ),
     ],

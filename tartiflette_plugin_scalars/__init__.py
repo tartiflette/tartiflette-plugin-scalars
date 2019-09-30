@@ -26,6 +26,7 @@ AVAILABLE_SCALARS = [
     ("hsla", "HSLA"),
     ("rgb", "RGB"),
     ("rgba", "RGBA"),
+    ("ipv4", "IPv4"),
 ]
 
 
