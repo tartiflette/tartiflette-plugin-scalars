@@ -23,6 +23,7 @@ AVAILABLE_SCALARS = [
     ("guid", "GUID"),
     ("hex_color_code", "HexColorCode"),
     ("hsl", "HSL"),
+    ("hsla", "HSLA"),
 ]
 
 
