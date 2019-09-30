@@ -60,7 +60,8 @@ class DateTime:
         :param value: the value to coerce
         :type value: datetime
         :return: the value as a datetime object if it can be parsed
-        :rtype: datetime
+        :raises TypeError: if the value isn't a datetime
+        :rtype: str
         """
         if isinstance(value, datetime):
             return value.isoformat()
