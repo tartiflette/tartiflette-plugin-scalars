@@ -30,6 +30,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar HexColorCode",
                 "scalar HSL",
                 "scalar HSLA",
+                "scalar RGB",
             ],
         ),
         (
@@ -55,6 +56,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "hex_color_code": {"enabled": False},
                 "hsl": {"enabled": False},
                 "hsla": {"enabled": False},
+                "rgb": {"enabled": False},
             },
             [],
         ),
@@ -80,6 +82,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "hex_color_code": {"enabled": True},
                 "hsl": {"enabled": True},
                 "hsla": {"enabled": True},
+                "rgb": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -102,6 +105,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar HexColorCode",
                 "scalar HSL",
                 "scalar HSLA",
+                "scalar RGB",
             ],
         ),
         (
@@ -127,6 +131,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "hex_color_code": {"name": "MyHexColorCode"},
                 "hsl": {"name": "MyHSL"},
                 "hsla": {"name": "MyHSLA"},
+                "rgb": {"name": "MyRGB"},
             },
             [
                 "scalar MyEmailAddress",
@@ -149,6 +154,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyHexColorCode",
                 "scalar MyHSL",
                 "scalar MyHSLA",
+                "scalar MyRGB",
             ],
         ),
     ],
