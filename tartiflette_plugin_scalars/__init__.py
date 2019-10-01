@@ -28,6 +28,7 @@ AVAILABLE_SCALARS = [
     ("rgba", "RGBA"),
     ("ipv4", "IPv4"),
     ("ipv6", "IPv6"),
+    ("isbn", "ISBN"),
 ]
 
 
