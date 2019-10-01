@@ -19,7 +19,7 @@ def _parse_ipv4(value: Union[str, IPv4Address]) -> IPv4Address:
 
 class IPv4:
     """
-    Scalar which handles  objects
+    Scalar which handles Internet Protocol version 4 addresses
     """
 
     @staticmethod
