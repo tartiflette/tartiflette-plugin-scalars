@@ -30,6 +30,7 @@ AVAILABLE_SCALARS = [
     ("ipv6", "IPv6"),
     ("isbn", "ISBN"),
     ("mac", "MAC"),
+    ("port", "Port"),
 ]
 
 
