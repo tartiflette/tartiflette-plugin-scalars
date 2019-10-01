@@ -41,11 +41,11 @@ class IPv4:
         return UNDEFINED_VALUE
 
     @staticmethod
-    def coerce_input(value: Union[str, int]) -> IPv4Address:
+    def coerce_input(value: str) -> IPv4Address:
         """
         Coerce the input value
         :param value: the value to coerce
-        :type value: Union[str, int]
+        :type value: str
         :return: the value as a IPv4Address object if it can be parsed
         :rtype: IPv4Address
         :raises TypeError: if the value isn't a string or int
