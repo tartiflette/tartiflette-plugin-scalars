@@ -41,7 +41,7 @@ class URL:
         if isinstance(ast, StringValueNode):
             try:
                 return _parse_url(ast.value)
-            except (ValueError, TypeError, OverflowError):
+            except (ValueError, TypeError):
                 return UNDEFINED_VALUE
         return UNDEFINED_VALUE
 
