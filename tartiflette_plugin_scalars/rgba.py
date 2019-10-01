@@ -22,7 +22,7 @@ def _check_rgba(value: str) -> str:
 
 class RGBA:
     """
-    Scalar which handles the Red, Green, Blue representation of a color
+    Scalar which handles the Red, Green, Blue and Alpha representation of a color
     """
 
     @staticmethod
