@@ -34,11 +34,11 @@ class USCurrency:
         return UNDEFINED_VALUE
 
     @staticmethod
-    def coerce_input(value: Union[str, int]) -> int:
+    def coerce_input(value: str) -> int:
         """
         Coerce the input value
         :param value: the value to coerce
-        :type value: Union[str, int]
+        :type value: str
         :return: the value in cents if it can be parsed
         :rtype: int
         :raises TypeError: if the value isn't a string or int

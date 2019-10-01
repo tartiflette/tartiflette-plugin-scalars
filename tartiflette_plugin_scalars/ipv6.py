@@ -41,11 +41,11 @@ class IPv6:
         return UNDEFINED_VALUE
 
     @staticmethod
-    def coerce_input(value: Union[str, int]) -> IPv6Address:
+    def coerce_input(value: str) -> IPv6Address:
         """
         Coerce the input value
         :param value: the value to coerce
-        :type value: Union[str, int]
+        :type value: str
         :return: the value as a IPv6Address object if it can be parsed
         :rtype: IPv6Address
         :raises TypeError: if the value isn't a string or int
