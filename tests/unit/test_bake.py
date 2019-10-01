@@ -33,6 +33,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar RGB",
                 "scalar RGBA",
                 "scalar IPv4",
+                "scalar IPv6",
             ],
         ),
         (
@@ -61,6 +62,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "rgb": {"enabled": False},
                 "rgba": {"enabled": False},
                 "ipv4": {"enabled": False},
+                "ipv6": {"enabled": False},
             },
             [],
         ),
@@ -89,6 +91,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "rgb": {"enabled": True},
                 "rgba": {"enabled": True},
                 "ipv4": {"enabled": True},
+                "ipv6": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -114,6 +117,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar RGB",
                 "scalar RGBA",
                 "scalar IPv4",
+                "scalar IPv6",
             ],
         ),
         (
@@ -142,6 +146,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "rgb": {"name": "MyRGB"},
                 "rgba": {"name": "MyRGBA"},
                 "ipv4": {"name": "MyIPv4"},
+                "ipv6": {"name": "MyIPv6"},
             },
             [
                 "scalar MyEmailAddress",
@@ -167,6 +172,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyRGB",
                 "scalar MyRGBA",
                 "scalar MyIPv4",
+                "scalar MyIPv6",
             ],
         ),
     ],
