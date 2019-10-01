@@ -35,6 +35,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar IPv4",
                 "scalar IPv6",
                 "scalar ISBN",
+                "scalar MAC",
             ],
         ),
         (
@@ -65,6 +66,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "ipv4": {"enabled": False},
                 "ipv6": {"enabled": False},
                 "isbn": {"enabled": False},
+                "mac": {"enabled": False},
             },
             [],
         ),
@@ -95,6 +97,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "ipv4": {"enabled": True},
                 "ipv6": {"enabled": True},
                 "isbn": {"enabled": True},
+                "mac": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -122,6 +125,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar IPv4",
                 "scalar IPv6",
                 "scalar ISBN",
+                "scalar MAC",
             ],
         ),
         (
@@ -152,6 +156,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "ipv4": {"name": "MyIPv4"},
                 "ipv6": {"name": "MyIPv6"},
                 "isbn": {"name": "MyISBN"},
+                "mac": {"name": "MyMAC"},
             },
             [
                 "scalar MyEmailAddress",
@@ -179,6 +184,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyIPv4",
                 "scalar MyIPv6",
                 "scalar MyISBN",
+                "scalar MyMAC",
             ],
         ),
     ],
