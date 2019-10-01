@@ -36,7 +36,7 @@ class IPv4:
         if isinstance(ast, StringValueNode):
             try:
                 return _parse_ipv4(ast.value)
-            except (ValueError, TypeError, OverflowError):
+            except (ValueError, TypeError):
                 return UNDEFINED_VALUE
         return UNDEFINED_VALUE
 
