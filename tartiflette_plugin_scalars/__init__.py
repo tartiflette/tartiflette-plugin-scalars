@@ -31,6 +31,7 @@ AVAILABLE_SCALARS = [
     ("isbn", "ISBN"),
     ("mac", "MAC"),
     ("port", "Port"),
+    ("us_currency", "USCurrency"),
 ]
 
 

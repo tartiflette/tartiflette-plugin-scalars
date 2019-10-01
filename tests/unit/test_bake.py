@@ -37,6 +37,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar ISBN",
                 "scalar MAC",
                 "scalar Port",
+                "scalar USCurrency",
             ],
         ),
         (
@@ -69,6 +70,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "isbn": {"enabled": False},
                 "mac": {"enabled": False},
                 "port": {"enabled": False},
+                "us_currency": {"enabled": False},
             },
             [],
         ),
@@ -101,6 +103,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "isbn": {"enabled": True},
                 "mac": {"enabled": True},
                 "port": {"enabled": True},
+                "us_currency": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -130,6 +133,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar ISBN",
                 "scalar MAC",
                 "scalar Port",
+                "scalar USCurrency",
             ],
         ),
         (
@@ -162,6 +166,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "isbn": {"name": "MyISBN"},
                 "mac": {"name": "MyMAC"},
                 "port": {"name": "MyPort"},
+                "us_currency": {"name": "MyUSCurrency"},
             },
             [
                 "scalar MyEmailAddress",
@@ -191,6 +196,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyISBN",
                 "scalar MyMAC",
                 "scalar MyPort",
+                "scalar MyUSCurrency",
             ],
         ),
     ],
