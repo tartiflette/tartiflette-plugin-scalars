@@ -33,6 +33,7 @@ AVAILABLE_SCALARS = [
     ("port", "Port"),
     ("us_currency", "USCurrency"),
     ("json", "JSON"),
+    ("json_object", "JSONObject"),
 ]
 
 
