@@ -32,6 +32,7 @@ AVAILABLE_SCALARS = [
     ("mac", "MAC"),
     ("port", "Port"),
     ("us_currency", "USCurrency"),
+    ("json", "JSON"),
 ]
 
 
