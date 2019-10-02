@@ -6,8 +6,8 @@ from tartiflette import Resolver, create_engine
 
 
 @pytest.mark.asyncio
-async def test_us_curency_ok():
-    @Resolver("Query.usCurrency", schema_name="test_us_curency_ok")
+async def test_us_currency_ok():
+    @Resolver("Query.usCurrency", schema_name="test_us_currency_ok")
     async def us_currency_resolver(*_args, **_kwargs):
         return 10050
 
@@ -20,7 +20,7 @@ async def test_us_curency_ok():
     engine = await create_engine(
         sdl=sdl,
         modules=[{"name": "tartiflette_plugin_scalars", "config": {}}],
-        schema_name="test_us_curency_ok",
+        schema_name="test_us_currency_ok",
     )
 
     assert await engine.execute("query usCurrencyOk { usCurrency }") == {
@@ -29,8 +29,8 @@ async def test_us_curency_ok():
 
 
 @pytest.mark.asyncio
-async def test_us_curency_nok():
-    @Resolver("Query.usCurrency", schema_name="test_us_curency_nok")
+async def test_us_currency_nok():
+    @Resolver("Query.usCurrency", schema_name="test_us_currency_nok")
     async def us_currency_resolver(*_args, **_kwargs):
         return "nok"
 
@@ -43,7 +43,7 @@ async def test_us_curency_nok():
     engine = await create_engine(
         sdl=sdl,
         modules=[{"name": "tartiflette_plugin_scalars", "config": {}}],
-        schema_name="test_us_curency_nok",
+        schema_name="test_us_currency_nok",
     )
 
     result = await engine.execute("query usCurrencyNok { usCurrency }")

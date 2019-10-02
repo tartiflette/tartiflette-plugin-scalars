@@ -32,7 +32,7 @@ class URL:
         ast: "ValueNode"
     ) -> Union[ParseResult, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value as a ParseResult tuple if it can be parsed, UNDEFINED_VALUE otherwise
@@ -48,7 +48,7 @@ class URL:
     @staticmethod
     def coerce_input(value: Union[str, ParseResult]) -> ParseResult:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
         :type value: str
         :return: the value as a ParseResult tuple if it can be parsed
@@ -61,7 +61,7 @@ class URL:
     @staticmethod
     def coerce_output(value: ParseResult) -> str:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
         :type value: ParseResult
         :return: the value as string

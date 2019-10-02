@@ -8,7 +8,7 @@ from tartiflette.language.ast import (
 )
 
 
-def _parse_positive_float(value):
+def _parse_positive_float(value: Union[str, int, float]) -> float:
     if isinstance(value, (str, int)) and not isinstance(value, bool):
         value = float(value)
     if not isinstance(value, float):
@@ -30,7 +30,7 @@ class PositiveFloat:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> Union[float, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value if it's can be parsed as a positive floating point number, UNDEFINED_VALUE otherwise
@@ -46,7 +46,7 @@ class PositiveFloat:
     @staticmethod
     def coerce_input(value: Union[str, int, float]) -> float:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
         :type value: Union[str, int, float]
         :return: the value if it's a positive float
@@ -59,9 +59,9 @@ class PositiveFloat:
     @staticmethod
     def coerce_output(value: Union[str, int, float]) -> float:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
-        :type value: Any
+        :type value: Union[str, int, float]
         :return: the value if it's a positive float
         :rtype: float
         :raises TypeError: if the value isn't parseable as a float

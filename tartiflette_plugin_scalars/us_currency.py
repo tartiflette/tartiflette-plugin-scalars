@@ -1,7 +1,7 @@
 from typing import Union  # pylint: disable=unused-import
 
 from tartiflette.constants import UNDEFINED_VALUE
-from tartiflette.language.ast import IntValueNode, StringValueNode
+from tartiflette.language.ast import StringValueNode
 
 
 def _parse_us_currency(value: str) -> int:
@@ -20,7 +20,7 @@ class USCurrency:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> Union[int, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value in cents if it can be parsed, UNDEFINED_VALUE otherwise
@@ -36,7 +36,7 @@ class USCurrency:
     @staticmethod
     def coerce_input(value: str) -> int:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
         :type value: str
         :return: the value in cents if it can be parsed
@@ -49,7 +49,7 @@ class USCurrency:
     @staticmethod
     def coerce_output(value: int) -> str:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
         :type value: int
         :return: the value as a USD string if it can be parsed

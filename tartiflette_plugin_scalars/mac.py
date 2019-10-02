@@ -28,10 +28,10 @@ class MAC:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> Union[str, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
-        :return: the value if it's a mac address, UNDEFINED_VALUE otherwise
+        :return: the value if it's a MAC address, UNDEFINED_VALUE otherwise
         :rtype: Union[str, UNDEFINED_VALUE]
         """
         if isinstance(ast, StringValueNode):
@@ -44,10 +44,10 @@ class MAC:
     @staticmethod
     def coerce_input(value: str) -> str:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
         :type value: str
-        :return: the value if it's a mac address
+        :return: the value if it's a MAC address
         :rtype: str
         :raises TypeError: if the value isn't a string
         :raises ValueError: if the value isn't a mac address
@@ -57,10 +57,10 @@ class MAC:
     @staticmethod
     def coerce_output(value: str) -> str:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
         :type value: str
-        :return: the value if it's a mac address
+        :return: the value if it's a MAC address
         :rtype: str
         :raises TypeError: if the value isn't a string
         :raises ValueError: if the value isn't a mac address

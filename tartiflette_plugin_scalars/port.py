@@ -11,7 +11,7 @@ _MAX_PORT = 65535
 _MIN_PORT = 0
 
 
-def _parse_port(value):
+def _parse_port(value: Union[str, int, float]) -> str:
     if isinstance(value, (str, float)):
         value = int(value)
     if not isinstance(value, int) or isinstance(value, bool):
@@ -37,7 +37,7 @@ class Port:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> Union[int, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value if it can be parsed as a port, UNDEFINED_VALUE otherwise
@@ -53,7 +53,7 @@ class Port:
     @staticmethod
     def coerce_input(value: Union[str, int, float]) -> int:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
         :type value: Union[str, int, float]
         :return: the value if it's a port
@@ -66,9 +66,9 @@ class Port:
     @staticmethod
     def coerce_output(value: Union[str, int, float]) -> int:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
-        :type value: Any
+        :type value: Union[str, int, float]
         :return: the value if it's an int
         :rtype: int
         :raises TypeError: if the value isn't parseable as an int

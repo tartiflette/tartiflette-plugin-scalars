@@ -28,7 +28,7 @@ class RGBA:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> Union[str, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value if it's a RGBA, UNDEFINED_VALUE otherwise
@@ -44,7 +44,7 @@ class RGBA:
     @staticmethod
     def coerce_input(value: str) -> str:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
         :type value: str
         :return: the value if it's a RGBA
@@ -57,7 +57,7 @@ class RGBA:
     @staticmethod
     def coerce_output(value: str) -> str:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
         :type value: str
         :return: the value if it's a RGBA
