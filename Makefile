@@ -1,3 +1,12 @@
+SET_ALPHA_VERSION = 0
+PKG_VERSION := $(shell cat setup.py | grep "_VERSION =" | egrep -o '[0-9]+\.[0-9]+\.[0-9]+(rc[0-9]+)?')
+
+REF := $(shell cat /github/workflow/event.json | jq ".ref")
+
+ifneq ($(REF),"refs/heads/master")
+PKG_VERSION := $(shell echo | awk -v pkg_version="$(PKG_VERSION)" -v build_number="$(shell date +\"%s\")" '{print pkg_version "dev" build_number}')
+SET_ALPHA_VERSION = 1
+endif
 
 .PHONY: format-import
 format-import:
