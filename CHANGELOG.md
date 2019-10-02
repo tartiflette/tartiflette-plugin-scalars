@@ -1,36 +1,8 @@
 # tartiflette-plugin-scalars
 
-### [1.0.0]
+## [Released]
 
-#### Added
 
-* EmailAddress scalar
-* DateTime scalar
-* NegativeFloat scalar
-* NegativeInt scalar
-* NonNegativeFloat scalar
-* NonNegativeInt scalar
-* NonPositiveFloat scalar
-* NonPositiveInt scalar
-* PositiveFloat scalar
-* PositiveInt scalar
-* Long scalar
-* BigInt scalar
-* UnsignedInt scalar
-* PhoneNumber scalar
-* PostalCode scalar
-* URL scalar
-* GUID scalar
-* HexColorCode scalar
-* HSL scalar
-* HSLA scalar
-* RGB scalar
-* RGBA scalar
-* IPv4 scalar
-* IPv6 scalar
-* MAC scalar
-* ISBN scalar
-* Port scalar
-* USCurrency scalar
-* JSON scalar
-* JSONObject scalar
+- [0.x.x]
+  - [0.1.x]
+    - [0.1.0](./changelogs/0.1.0.md) - 2019-10-02
