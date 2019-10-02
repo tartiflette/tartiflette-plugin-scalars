@@ -1,6 +1,6 @@
 import re
 
-from typing import Any, Union
+from typing import Union
 
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
@@ -8,7 +8,7 @@ from tartiflette.language.ast import StringValueNode
 _PHONE_NUMBER_REGEX = re.compile(r"""^\+\d{11,15}$""")
 
 
-def _check_phone_number(value: Any) -> str:
+def _check_phone_number(value: str) -> str:
     if not isinstance(value, str):
         raise TypeError(
             f"PhoneNumber cannot represent a non string value: < {value} >"
@@ -26,7 +26,7 @@ class PhoneNumber:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> Union[str, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value if it's a phone number, UNDEFINED_VALUE otherwise
@@ -42,9 +42,9 @@ class PhoneNumber:
     @staticmethod
     def coerce_input(value: str) -> str:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
-        :type value: Any
+        :type value: str
         :return: the value if it's a phone number
         :rtype: str
         :raises TypeError: if the value isn't a string
@@ -55,9 +55,9 @@ class PhoneNumber:
     @staticmethod
     def coerce_output(value: str) -> str:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
-        :type value: Any
+        :type value: str
         :return: the value if it's a phone number
         :rtype: str
         :raises TypeError: if the value isn't a string

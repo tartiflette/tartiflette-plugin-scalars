@@ -26,7 +26,7 @@ class DateTime:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> Union[datetime, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value as a datetime object if it can be parsed, UNDEFINED_VALUE otherwise
@@ -42,7 +42,7 @@ class DateTime:
     @staticmethod
     def coerce_input(value: Union[str, int]) -> datetime:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
         :type value: Union[str, int]
         :return: the value as a datetime object if it can be parsed
@@ -56,7 +56,7 @@ class DateTime:
     @staticmethod
     def coerce_output(value: datetime) -> str:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
         :type value: datetime
         :return: the value as a datetime object if it can be parsed

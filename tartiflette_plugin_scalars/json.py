@@ -1,6 +1,6 @@
 import json
 
-from typing import Any, Union  # pylint: disable=unused-import
+from typing import Any  # pylint: disable=unused-import
 
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
@@ -25,7 +25,7 @@ class JSON:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> Any:
         """
-        Coerce the input value from an AST node
+        Dumps the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value parsed from JSON, UNDEFINED_VALUE otherwise
@@ -41,7 +41,7 @@ class JSON:
     @staticmethod
     def coerce_input(value: str) -> Any:
         """
-        Coerce the input value
+        Dumps the input value
         :param value: the value to coerce
         :type value: str
         :return: the value parsed from JSON
@@ -53,7 +53,7 @@ class JSON:
     @staticmethod
     def coerce_output(value: Any) -> str:
         """
-        Coerce the output value
+        Loads the output value
         :param value: the value to coerce
         :type value: Any
         :return: the value dumped to JSON

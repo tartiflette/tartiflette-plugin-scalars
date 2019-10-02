@@ -5,7 +5,7 @@ from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
 
 
-def _parse_ipv4(value: Union[str, IPv4Address]) -> IPv4Address:
+def _parse_ipv4(value: str) -> IPv4Address:
     if isinstance(value, str):
         value = ip_address(value)
     if isinstance(value, IPv4Address):
@@ -27,7 +27,7 @@ class IPv4:
         ast: "ValueNode"
     ) -> Union[IPv4Address, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value as a IPv4Address object if it can be parsed, UNDEFINED_VALUE otherwise
@@ -43,7 +43,7 @@ class IPv4:
     @staticmethod
     def coerce_input(value: str) -> IPv4Address:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
         :type value: str
         :return: the value as a IPv4Address object if it can be parsed
@@ -56,7 +56,7 @@ class IPv4:
     @staticmethod
     def coerce_output(value: IPv4Address) -> str:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
         :type value: IPv4Address
         :return: the value as a IPv4Address object if it can be parsed

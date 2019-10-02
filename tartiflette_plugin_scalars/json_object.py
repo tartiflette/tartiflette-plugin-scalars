@@ -1,6 +1,6 @@
 import json
 
-from typing import Any, Union  # pylint: disable=unused-import
+from typing import Any  # pylint: disable=unused-import
 
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
@@ -28,11 +28,11 @@ class JSONObject:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> dict:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value parsed from JSON if it's an object, UNDEFINED_VALUE otherwise
-        :rtype: Any
+        :rtype: dict
         """
         if isinstance(ast, StringValueNode):
             try:
@@ -44,11 +44,11 @@ class JSONObject:
     @staticmethod
     def coerce_input(value: str) -> dict:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
         :type value: str
         :return: the value parsed from JSON if it's an object
-        :rtype: int
+        :rtype: dict
         :raises TypeError: if the value isn't a string
         """
         return _parse_json_object(value)
@@ -56,7 +56,7 @@ class JSONObject:
     @staticmethod
     def coerce_output(value: dict) -> str:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
         :type value: Any
         :return: the value dumped to JSON
