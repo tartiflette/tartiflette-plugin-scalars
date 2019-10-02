@@ -1,6 +1,6 @@
 # tartiflette-plugin-scalars
 
-### [Unreleased]
+### [1.0.0]
 
 #### Added
 
@@ -17,3 +17,20 @@
 * Long scalar
 * BigInt scalar
 * UnsignedInt scalar
+* PhoneNumber scalar
+* PostalCode scalar
+* URL scalar
+* GUID scalar
+* HexColorCode scalar
+* HSL scalar
+* HSLA scalar
+* RGB scalar
+* RGBA scalar
+* IPv4 scalar
+* IPv6 scalar
+* MAC scalar
+* ISBN scalar
+* Port scalar
+* USCurrency scalar
+* JSON scalar
+* JSONObject scalar
