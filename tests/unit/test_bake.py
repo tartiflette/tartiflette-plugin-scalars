@@ -39,6 +39,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar Port",
                 "scalar USCurrency",
                 "scalar JSON",
+                "scalar JSONObject",
             ],
         ),
         (
@@ -73,6 +74,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "port": {"enabled": False},
                 "us_currency": {"enabled": False},
                 "json": {"enabled": False},
+                "json_object": {"enabled": False},
             },
             [],
         ),
@@ -107,6 +109,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "port": {"enabled": True},
                 "us_currency": {"enabled": True},
                 "json": {"enabled": True},
+                "json_object": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -138,6 +141,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar Port",
                 "scalar USCurrency",
                 "scalar JSON",
+                "scalar JSONObject",
             ],
         ),
         (
@@ -172,6 +176,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "port": {"name": "MyPort"},
                 "us_currency": {"name": "MyUSCurrency"},
                 "json": {"name": "MyJSON"},
+                "json_object": {"name": "MyJSONObject"},
             },
             [
                 "scalar MyEmailAddress",
@@ -203,6 +208,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyPort",
                 "scalar MyUSCurrency",
                 "scalar MyJSON",
+                "scalar MyJSONObject",
             ],
         ),
     ],

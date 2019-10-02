@@ -1,10 +1,7 @@
 import pytest
 
 from tartiflette.constants import UNDEFINED_VALUE
-from tartiflette.language.ast import (
-    DirectiveDefinitionNode,
-    StringValueNode,
-)
+from tartiflette.language.ast import DirectiveDefinitionNode, StringValueNode
 
 from tartiflette_plugin_scalars.json import JSON
 
