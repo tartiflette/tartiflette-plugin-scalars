@@ -37,3 +37,23 @@ clean:
 	find . -name '*.pyc' -exec rm -fv {} +
 	find . -name '*.pyo' -exec rm -fv {} +
 	find . -name '__pycache__' -exec rm -frv {} +
+
+.PHONY: set-version
+set-version:
+ifneq ($(SET_ALPHA_VERSION), 0)
+	bash -c "sed -i \"s@_VERSION[ ]*=[ ]*[\\\"\'][0-9]\+\\.[0-9]\+\\.[0-9]\+\(rc[0-9]\+\)\?[\\\"\'].*@_VERSION = \\\"$(PKG_VERSION)\\\"@\" setup.py"
+endif
+
+.PHONY: get-version
+get-version:
+	@echo $(PKG_VERSION)
+
+.PHONY: get-last-released-changelog-entry
+get-last-released-changelog-entry:
+	@cat changelogs/$(PKG_VERSION).md
+
+.PHONY: github-action-version-and-changelog
+github-action-version-and-changelog:
+	echo $(PKG_VERSION) > $(HOME)/name
+	echo $(PKG_VERSION) > $(HOME)/tag
+	@cp changelogs/$(PKG_VERSION).md $(HOME)/changelog
