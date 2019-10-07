@@ -76,9 +76,9 @@ async def test_guid_mutation_ok():
         schema_name="test_guid_mutation_ok",
     )
 
-    assert await engine.execute('mutation guid { guid(input:"5591b4e9-c747-45ae-8abf-d9cd1a17081e") }') == {
-        "data": {"guid":  True}
-    }
+    assert await engine.execute(
+        'mutation guid { guid(input:"5591b4e9-c747-45ae-8abf-d9cd1a17081e") }'
+    ) == {"data": {"guid": True}}
 
 
 @pytest.mark.asyncio
@@ -104,6 +104,9 @@ async def test_guid_mutation_nok():
     )
 
     result = await engine.execute('mutation guid { guid(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type GUID'
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type GUID"
+    )

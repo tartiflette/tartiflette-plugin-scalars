@@ -79,9 +79,9 @@ async def test_datetime_mutation_ok():
         schema_name="test_datetime_mutation_ok",
     )
 
-    assert await engine.execute('mutation dateTime { dateTime(input:"2019-10-07T15:02:00") }') == {
-        "data": {"dateTime":  True}
-    }
+    assert await engine.execute(
+        'mutation dateTime { dateTime(input:"2019-10-07T15:02:00") }'
+    ) == {"data": {"dateTime": True}}
 
 
 @pytest.mark.asyncio
@@ -106,7 +106,12 @@ async def test_date_time_mutation_nok():
         schema_name="test_datetime_mutation_nok",
     )
 
-    result = await engine.execute('mutation dateTime { dateTime(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type DateTime'
+    result = await engine.execute(
+        'mutation dateTime { dateTime(input:"nok") }'
+    )
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type DateTime"
+    )

@@ -76,9 +76,9 @@ async def test_rgb_mutation_ok():
         schema_name="test_rgb_mutation_ok",
     )
 
-    assert await engine.execute('mutation rgb { rgb(input:"rgb(100%, 0%, 60%)") }') == {
-        "data": {"rgb":  True}
-    }
+    assert await engine.execute(
+        'mutation rgb { rgb(input:"rgb(100%, 0%, 60%)") }'
+    ) == {"data": {"rgb": True}}
 
 
 @pytest.mark.asyncio
@@ -104,6 +104,9 @@ async def test_rgb_mutation_nok():
     )
 
     result = await engine.execute('mutation rgb { rgb(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type RGB'
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type RGB"
+    )

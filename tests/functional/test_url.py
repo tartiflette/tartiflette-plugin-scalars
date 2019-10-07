@@ -88,9 +88,9 @@ async def test_url_mutation_ok():
         schema_name="test_url_mutation_ok",
     )
 
-    assert await engine.execute('mutation url { url(input:"https://www.dailymotion.com/") }') == {
-        "data": {"url":  True}
-    }
+    assert await engine.execute(
+        'mutation url { url(input:"https://www.dailymotion.com/") }'
+    ) == {"data": {"url": True}}
 
 
 @pytest.mark.asyncio
@@ -116,6 +116,9 @@ async def test_url_mutation_nok():
     )
 
     result = await engine.execute('mutation url { url(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type URL'
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type URL"
+    )

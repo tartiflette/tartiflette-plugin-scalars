@@ -76,9 +76,9 @@ async def test_hsl_mutation_ok():
         schema_name="test_hsl_mutation_ok",
     )
 
-    assert await engine.execute('mutation hsl { hsl(input:"hsl(270, 60%, 50%)") }') == {
-        "data": {"hsl":  True}
-    }
+    assert await engine.execute(
+        'mutation hsl { hsl(input:"hsl(270, 60%, 50%)") }'
+    ) == {"data": {"hsl": True}}
 
 
 @pytest.mark.asyncio
@@ -104,6 +104,9 @@ async def test_hsl_mutation_nok():
     )
 
     result = await engine.execute('mutation hsl { hsl(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type HSL'
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type HSL"
+    )
