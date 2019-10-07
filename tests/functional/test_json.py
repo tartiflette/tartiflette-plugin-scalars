@@ -52,7 +52,7 @@ async def test_json_nok():
     assert len(result["errors"]) == 1
     assert (
         result["errors"][0]["message"]
-        == "Object of type 'datetime' is not JSON serializable"
+        == "Object of type datetime is not JSON serializable"
     )
 
 
