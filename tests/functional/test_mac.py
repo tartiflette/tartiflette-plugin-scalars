@@ -77,9 +77,9 @@ async def test_mac_mutation_ok():
         schema_name="test_mac_mutation_ok",
     )
 
-    assert await engine.execute('mutation mac { mac(input:"00:0a:95:9d:68:16") }') == {
-        "data": {"mac":  True}
-    }
+    assert await engine.execute(
+        'mutation mac { mac(input:"00:0a:95:9d:68:16") }'
+    ) == {"data": {"mac": True}}
 
 
 @pytest.mark.asyncio
@@ -105,6 +105,9 @@ async def test_mac_mutation_nok():
     )
 
     result = await engine.execute('mutation mac { mac(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type MAC'
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type MAC"
+    )

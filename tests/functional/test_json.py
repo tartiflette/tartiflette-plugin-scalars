@@ -79,7 +79,7 @@ async def test_json_mutation_ok():
     )
 
     assert await engine.execute('mutation json { json(input:"true") }') == {
-        "data": {"json":  True}
+        "data": {"json": True}
     }
 
 
@@ -105,7 +105,9 @@ async def test_json_mutation_nok():
         schema_name="test_json_mutation_nok",
     )
 
-    result = await engine.execute('mutation json { json(input:1) }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value 1 is not of correct type JSON'
+    result = await engine.execute("mutation json { json(input:1) }")
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"] == "Value 1 is not of correct type JSON"
+    )

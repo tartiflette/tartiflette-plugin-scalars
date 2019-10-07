@@ -77,8 +77,8 @@ async def test_long_mutation_ok():
         schema_name="test_long_mutation_ok",
     )
 
-    assert await engine.execute('mutation long { long(input:100) }') == {
-        "data": {"long":  True}
+    assert await engine.execute("mutation long { long(input:100) }") == {
+        "data": {"long": True}
     }
 
 
@@ -104,7 +104,12 @@ async def test_long_mutation_nok():
         schema_name="test_long_mutation_nok",
     )
 
-    result = await engine.execute('mutation long { long(input:9223372036854775809) }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value 9223372036854775809 is not of correct type Long'
+    result = await engine.execute(
+        "mutation long { long(input:9223372036854775809) }"
+    )
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value 9223372036854775809 is not of correct type Long"
+    )

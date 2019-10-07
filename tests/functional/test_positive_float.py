@@ -57,7 +57,9 @@ async def test_positive_float_nok():
 
 @pytest.mark.asyncio
 async def test__positive_float_mutation_ok():
-    @Resolver("Mutation.positiveFloat", schema_name="test_positive_float_mutation_ok")
+    @Resolver(
+        "Mutation.positiveFloat", schema_name="test_positive_float_mutation_ok"
+    )
     async def positive_float_resolver(*_args, **_kwargs):
         return True
 
@@ -77,14 +79,17 @@ async def test__positive_float_mutation_ok():
         schema_name="test_positive_float_mutation_ok",
     )
 
-    assert await engine.execute('mutation positiveFloat { positiveFloat(input:100) }') == {
-        "data": {"positiveFloat":  True}
-    }
+    assert await engine.execute(
+        "mutation positiveFloat { positiveFloat(input:100) }"
+    ) == {"data": {"positiveFloat": True}}
 
 
 @pytest.mark.asyncio
 async def test_positive_float_mutation_nok():
-    @Resolver("Mutation.positiveFloat", schema_name="test_positive_float_mutation_nok")
+    @Resolver(
+        "Mutation.positiveFloat",
+        schema_name="test_positive_float_mutation_nok",
+    )
     async def positive_float_resolver(*_args, **_kwargs):
         return True
 
@@ -104,7 +109,12 @@ async def test_positive_float_mutation_nok():
         schema_name="test_positive_float_mutation_nok",
     )
 
-    result = await engine.execute('mutation positiveFloat { positiveFloat(input:-100) }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value -100 is not of correct type PositiveFloat'
+    result = await engine.execute(
+        "mutation positiveFloat { positiveFloat(input:-100) }"
+    )
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value -100 is not of correct type PositiveFloat"
+    )

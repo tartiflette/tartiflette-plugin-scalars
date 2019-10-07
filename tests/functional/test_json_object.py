@@ -57,7 +57,9 @@ async def test_json_object_nok():
 
 @pytest.mark.asyncio
 async def test_json_object_mutation_ok():
-    @Resolver("Mutation.jsonObject", schema_name="test_json_object_mutation_ok")
+    @Resolver(
+        "Mutation.jsonObject", schema_name="test_json_object_mutation_ok"
+    )
     async def json_object_resolver(*_args, **_kwargs):
         return True
 
@@ -77,14 +79,16 @@ async def test_json_object_mutation_ok():
         schema_name="test_json_object_mutation_ok",
     )
 
-    assert await engine.execute("""mutation jsonObject { jsonObject(input:"{\\\"ok\\\": 2}") }""") == {
-        "data": {"jsonObject":  True}
-    }
+    assert await engine.execute(
+        """mutation jsonObject { jsonObject(input:"{\\\"ok\\\": 2}") }"""
+    ) == {"data": {"jsonObject": True}}
 
 
 @pytest.mark.asyncio
 async def test_json_object_mutation_nok():
-    @Resolver("Mutation.jsonObject", schema_name="test_json_object_mutation_nok")
+    @Resolver(
+        "Mutation.jsonObject", schema_name="test_json_object_mutation_nok"
+    )
     async def json_object_resolver(*_args, **_kwargs):
         return True
 
@@ -104,7 +108,12 @@ async def test_json_object_mutation_nok():
         schema_name="test_json_object_mutation_nok",
     )
 
-    result = await engine.execute('mutation jsonObject { jsonObject(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type JSONObject'
+    result = await engine.execute(
+        'mutation jsonObject { jsonObject(input:"nok") }'
+    )
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type JSONObject"
+    )

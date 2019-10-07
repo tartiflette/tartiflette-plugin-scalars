@@ -57,7 +57,9 @@ async def test_phone_number_ok_nok():
 
 @pytest.mark.asyncio
 async def test_phone_number_mutation_ok():
-    @Resolver("Mutation.phoneNumber", schema_name="test_phone_number_mutation_ok")
+    @Resolver(
+        "Mutation.phoneNumber", schema_name="test_phone_number_mutation_ok"
+    )
     async def phone_number_resolver(*_args, **_kwargs):
         return True
 
@@ -77,14 +79,16 @@ async def test_phone_number_mutation_ok():
         schema_name="test_phone_number_mutation_ok",
     )
 
-    assert await engine.execute('mutation phoneNumber { phoneNumber(input:"+33177351100") }') == {
-        "data": {"phoneNumber":  True}
-    }
+    assert await engine.execute(
+        'mutation phoneNumber { phoneNumber(input:"+33177351100") }'
+    ) == {"data": {"phoneNumber": True}}
 
 
 @pytest.mark.asyncio
 async def test_phone_number_mutation_nok():
-    @Resolver("Mutation.phoneNumber", schema_name="test_phone_number_mutation_nok")
+    @Resolver(
+        "Mutation.phoneNumber", schema_name="test_phone_number_mutation_nok"
+    )
     async def phone_number_resolver(*_args, **_kwargs):
         return True
 
@@ -104,7 +108,12 @@ async def test_phone_number_mutation_nok():
         schema_name="test_phone_number_mutation_nok",
     )
 
-    result = await engine.execute('mutation phoneNumber { phoneNumber(input:"+666") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value +666 is not of correct type PhoneNumber'
+    result = await engine.execute(
+        'mutation phoneNumber { phoneNumber(input:"+666") }'
+    )
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value +666 is not of correct type PhoneNumber"
+    )

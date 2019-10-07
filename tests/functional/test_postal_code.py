@@ -57,7 +57,9 @@ async def test_postal_code_ok_nok():
 
 @pytest.mark.asyncio
 async def test_postal_code_mutation_ok():
-    @Resolver("Mutation.postalCode", schema_name="test_postal_code_mutation_ok")
+    @Resolver(
+        "Mutation.postalCode", schema_name="test_postal_code_mutation_ok"
+    )
     async def postal_code_resolver(*_args, **_kwargs):
         return True
 
@@ -77,14 +79,16 @@ async def test_postal_code_mutation_ok():
         schema_name="test_postal_code_mutation_ok",
     )
 
-    assert await engine.execute('mutation postalCode { postalCode(input:"75017") }') == {
-        "data": {"postalCode":  True}
-    }
+    assert await engine.execute(
+        'mutation postalCode { postalCode(input:"75017") }'
+    ) == {"data": {"postalCode": True}}
 
 
 @pytest.mark.asyncio
 async def test_postal_code_mutation_nok():
-    @Resolver("Mutation.postalCode", schema_name="test_postal_code_mutation_nok")
+    @Resolver(
+        "Mutation.postalCode", schema_name="test_postal_code_mutation_nok"
+    )
     async def postal_code_resolver(*_args, **_kwargs):
         return True
 
@@ -104,7 +108,12 @@ async def test_postal_code_mutation_nok():
         schema_name="test_postal_code_mutation_nok",
     )
 
-    result = await engine.execute('mutation postalCode { postalCode(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type PostalCode'
+    result = await engine.execute(
+        'mutation postalCode { postalCode(input:"nok") }'
+    )
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type PostalCode"
+    )

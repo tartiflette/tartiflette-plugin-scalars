@@ -77,8 +77,8 @@ async def test_port_mutation_ok():
         schema_name="test_port_mutation_ok",
     )
 
-    assert await engine.execute('mutation port { port(input:80) }') == {
-        "data": {"port":  True}
+    assert await engine.execute("mutation port { port(input:80) }") == {
+        "data": {"port": True}
     }
 
 
@@ -104,7 +104,10 @@ async def test_port_mutation_nok():
         schema_name="test_port_mutation_nok",
     )
 
-    result = await engine.execute('mutation port { port(input:999999) }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value 999999 is not of correct type Port'
+    result = await engine.execute("mutation port { port(input:999999) }")
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value 999999 is not of correct type Port"
+    )

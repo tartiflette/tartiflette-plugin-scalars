@@ -57,7 +57,9 @@ async def test_positive_int_nok():
 
 @pytest.mark.asyncio
 async def test_positive_int_mutation_ok():
-    @Resolver("Mutation.positiveInt", schema_name="test_positive_int_mutation_ok")
+    @Resolver(
+        "Mutation.positiveInt", schema_name="test_positive_int_mutation_ok"
+    )
     async def positive_int_resolver(*_args, **_kwargs):
         return True
 
@@ -77,14 +79,16 @@ async def test_positive_int_mutation_ok():
         schema_name="test_positive_int_mutation_ok",
     )
 
-    assert await engine.execute('mutation positiveInt { positiveInt(input:100) }') == {
-        "data": {"positiveInt":  True}
-    }
+    assert await engine.execute(
+        "mutation positiveInt { positiveInt(input:100) }"
+    ) == {"data": {"positiveInt": True}}
 
 
 @pytest.mark.asyncio
 async def test_positive_int_mutation_nok():
-    @Resolver("Mutation.positiveInt", schema_name="test_positive_int_mutation_nok")
+    @Resolver(
+        "Mutation.positiveInt", schema_name="test_positive_int_mutation_nok"
+    )
     async def positive_int_resolver(*_args, **_kwargs):
         return True
 
@@ -104,7 +108,12 @@ async def test_positive_int_mutation_nok():
         schema_name="test_positive_int_mutation_nok",
     )
 
-    result = await engine.execute('mutation positiveInt { positiveInt(input:-100) }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value -100 is not of correct type PositiveInt'
+    result = await engine.execute(
+        "mutation positiveInt { positiveInt(input:-100) }"
+    )
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value -100 is not of correct type PositiveInt"
+    )

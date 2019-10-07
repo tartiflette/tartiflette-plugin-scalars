@@ -76,9 +76,9 @@ async def test_isbn_mutation_ok():
         schema_name="test_isbn_mutation_ok",
     )
 
-    assert await engine.execute('mutation isbn { isbn(input:"ISBN 0-9630096-0-5") }') == {
-        "data": {"isbn":  True}
-    }
+    assert await engine.execute(
+        'mutation isbn { isbn(input:"ISBN 0-9630096-0-5") }'
+    ) == {"data": {"isbn": True}}
 
 
 @pytest.mark.asyncio
@@ -104,6 +104,9 @@ async def test_isbn_mutation_nok():
     )
 
     result = await engine.execute('mutation isbn { isbn(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type ISBN'
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type ISBN"
+    )

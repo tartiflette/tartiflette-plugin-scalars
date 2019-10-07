@@ -77,8 +77,8 @@ async def test_big_int_mutation_ok():
         schema_name="test_big_int_mutation_ok",
     )
 
-    assert await engine.execute('mutation bigInt { bigInt(input:100) }') == {
-        "data": {"bigInt":  True}
+    assert await engine.execute("mutation bigInt { bigInt(input:100) }") == {
+        "data": {"bigInt": True}
     }
 
 
@@ -104,7 +104,10 @@ async def test_big_int_mutation_nok():
         schema_name="test_big_int_mutation_nok",
     )
 
-    result = await engine.execute('mutation bigInt { bigInt(input:True) }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value True is not of correct type BigInt'
+    result = await engine.execute("mutation bigInt { bigInt(input:True) }")
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value True is not of correct type BigInt"
+    )

@@ -77,9 +77,9 @@ async def test_email_address_mutation_ok():
         schema_name="test_email_address_mutation_ok",
     )
 
-    assert await engine.execute('mutation email { email(input:"alice.girardguittard@dailymotion.com") }') == {
-        "data": {"email":  True}
-    }
+    assert await engine.execute(
+        'mutation email { email(input:"alice.girardguittard@dailymotion.com") }'
+    ) == {"data": {"email": True}}
 
 
 @pytest.mark.asyncio
@@ -105,6 +105,9 @@ async def test_email_address_mutation_nok():
     )
 
     result = await engine.execute('mutation email { email(input:"nok") }')
-    assert result['data'] is None
-    assert len(result['errors']) == 1
-    assert result['errors'][0]['message'] == 'Value nok is not of correct type EmailAddress'
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type EmailAddress"
+    )
