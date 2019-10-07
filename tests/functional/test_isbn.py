@@ -52,3 +52,58 @@ async def test_isbn_ok_nok():
     assert (
         result["errors"][0]["message"] == "Value is not a valid ISBN: < nope >"
     )
+
+
+@pytest.mark.asyncio
+async def test_isbn_mutation_ok():
+    @Resolver("Mutation.isbn", schema_name="test_isbn_mutation_ok")
+    async def isbn_resolver(*_args, **_kwargs):
+        return True
+
+    sdl = """
+    type Query {
+        isbn: ISBN
+    }
+
+    type Mutation {
+        isbn(input: ISBN): Boolean
+    }
+    """
+
+    engine = await create_engine(
+        sdl=sdl,
+        modules=[{"name": "tartiflette_plugin_scalars", "config": {}}],
+        schema_name="test_isbn_mutation_ok",
+    )
+
+    assert await engine.execute('mutation isbn { isbn(input:"ISBN 0-9630096-0-5") }') == {
+        "data": {"isbn":  True}
+    }
+
+
+@pytest.mark.asyncio
+async def test_isbn_mutation_nok():
+    @Resolver("Mutation.isbn", schema_name="test_isbn_mutation_nok")
+    async def isbn_resolver(*_args, **_kwargs):
+        return True
+
+    sdl = """
+    type Query {
+        isbn: ISBN
+    }
+
+    type Mutation {
+        isbn(input: ISBN): Boolean
+    }
+    """
+
+    engine = await create_engine(
+        sdl=sdl,
+        modules=[{"name": "tartiflette_plugin_scalars", "config": {}}],
+        schema_name="test_isbn_mutation_nok",
+    )
+
+    result = await engine.execute('mutation isbn { isbn(input:"nok") }')
+    assert result['data'] is None
+    assert len(result['errors']) == 1
+    assert result['errors'][0]['message'] == 'Value nok is not of correct type ISBN'
