@@ -91,7 +91,7 @@ async def test_non_negative_float_nok_mutation_ok():
 @pytest.mark.asyncio
 async def test_non_negative_float_mutation_nok():
     @Resolver("Mutation.nonNegativeFloat", schema_name="test_non_negative_float_mutation_nok")
-    async def nonNegativeFloat_resolver(*_args, **_kwargs):
+    async def non_negative_float_resolver(*_args, **_kwargs):
         return True
 
     sdl = """
