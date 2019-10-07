@@ -56,7 +56,7 @@ async def test_negative_int_nok():
 
 
 @pytest.mark.asyncio
-async def test_non_negative_int_nok_mutation_ok():
+async def test_non_negative_int_mutation_ok():
     @Resolver("Mutation.nonNegativeInt", schema_name="test_non_negative_int_mutation_ok")
     async def non_negative_int_resolver(*_args, **_kwargs):
         return True

@@ -62,7 +62,7 @@ async def test_non_positive_float_nok():
 
 
 @pytest.mark.asyncio
-async def test_non_positive_float_nok_mutation_ok():
+async def test_non_positive_float_mutation_ok():
     @Resolver("Mutation.nonPositiveFloat", schema_name="test_non_positive_float_mutation_ok")
     async def non_positive_float_resolver(*_args, **_kwargs):
         return True
