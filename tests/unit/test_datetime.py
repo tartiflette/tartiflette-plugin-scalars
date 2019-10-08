@@ -75,5 +75,5 @@ def test_coerce_output(input_val, output_val):
         ),
     ],
 )
-def test_parse_literal_email_address(input_val, output_val):
+def test_parse_literal(input_val, output_val):
     assert DateTime().parse_literal(input_val) == output_val

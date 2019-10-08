@@ -1,6 +1,6 @@
 import re
 
-from typing import Any, Union
+from typing import Union
 
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
@@ -10,7 +10,7 @@ _EMAIL_ADDRESS_REGEX = re.compile(
 )
 
 
-def _check_email_address(value: Any) -> str:
+def _check_email_address(value: str) -> str:
     if not isinstance(value, str):
         raise TypeError(
             f"EmailAddress cannot represent a non string value: < {value} >"
@@ -28,7 +28,7 @@ class EmailAddress:
     @staticmethod
     def parse_literal(ast: "ValueNode") -> Union[str, "UNDEFINED_VALUE"]:
         """
-        Coerce the input value from an AST node
+        Loads the input value from an AST node
         :param ast: ast node to coerce
         :type ast: ValueNode
         :return: the value if it's an email, UNDEFINED_VALUE otherwise
@@ -42,11 +42,11 @@ class EmailAddress:
         return UNDEFINED_VALUE
 
     @staticmethod
-    def coerce_input(value: Any) -> str:
+    def coerce_input(value: str) -> str:
         """
-        Coerce the input value
+        Loads the input value
         :param value: the value to coerce
-        :type value: Any
+        :type value: str
         :return: the value if it's an email
         :rtype: str
         :raises TypeError: if the value isn't a string
@@ -55,11 +55,11 @@ class EmailAddress:
         return _check_email_address(value)
 
     @staticmethod
-    def coerce_output(value: Any) -> str:
+    def coerce_output(value: str) -> str:
         """
-        Coerce the output value
+        Dumps the output value
         :param value: the value to coerce
-        :type value: Any
+        :type value: str
         :return: the value if it's an email
         :rtype: str
         :raises TypeError: if the value isn't a string

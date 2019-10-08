@@ -1,7 +1,3 @@
-import os
-import subprocess
-import sys
-
 from setuptools import find_packages, setup
 
 _TEST_REQUIRE = [
@@ -13,7 +9,7 @@ _TEST_REQUIRE = [
     "isort==4.3.21",
 ]
 
-_VERSION = "0.0.1"
+_VERSION = "0.1.0"
 
 _PACKAGES = find_packages(exclude=["tests*"])
 
@@ -41,7 +37,7 @@ setup(
     ],
     keywords="api graphql protocol tartiflette",
     packages=_PACKAGES,
-    install_requires=["tartiflette==1.0.0", "python-dateutil==2.8.0"],
+    install_requires=["tartiflette>=1.0.0,<2.0.0", "python-dateutil==2.8.0"],
     tests_require=_TEST_REQUIRE,
     extras_require={"test": _TEST_REQUIRE},
     include_package_data=True,

@@ -1,5 +1,3 @@
-import asyncio
-
 from datetime import datetime
 
 import pytest
@@ -54,4 +52,64 @@ async def test_datetime_nok():
     assert (
         result["errors"][0]["message"]
         == "DateTime cannot represent value: < nok >"
+    )
+
+
+@pytest.mark.asyncio
+async def test_datetime_mutation_ok():
+    @Resolver("Mutation.dateTime", schema_name="test_datetime_mutation_ok")
+    async def date_time_resolver(*_args, **_kwargs):
+        return True
+
+    sdl = """
+    type Query {
+        dateTime: DateTime
+    }
+
+    type Mutation {
+        dateTime(input: DateTime): Boolean
+    }
+    """
+
+    engine = await create_engine(
+        sdl=sdl,
+        modules=[{"name": "tartiflette_plugin_scalars", "config": {}}],
+        schema_name="test_datetime_mutation_ok",
+    )
+
+    assert await engine.execute(
+        'mutation dateTime { dateTime(input:"2019-10-07T15:02:00") }'
+    ) == {"data": {"dateTime": True}}
+
+
+@pytest.mark.asyncio
+async def test_date_time_mutation_nok():
+    @Resolver("Mutation.dateTime", schema_name="test_date_time_mutation_nok")
+    async def dateTime_resolver(*_args, **_kwargs):
+        return True
+
+    sdl = """
+    type Query {
+        dateTime: DateTime
+    }
+
+    type Mutation {
+        dateTime(input: DateTime): Boolean
+    }
+    """
+
+    engine = await create_engine(
+        sdl=sdl,
+        modules=[{"name": "tartiflette_plugin_scalars", "config": {}}],
+        schema_name="test_datetime_mutation_nok",
+    )
+
+    result = await engine.execute(
+        'mutation dateTime { dateTime(input:"nok") }'
+    )
+    assert result["data"] is None
+    assert len(result["errors"]) == 1
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type DateTime"
     )

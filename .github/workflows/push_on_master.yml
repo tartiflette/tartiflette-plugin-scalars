@@ -8,42 +8,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: build docker image
-        uses: actions/docker/cli@master
-        with:
-          args: build -t tartiflette_plugin_scalar .
       - name: style
-        uses: actions/docker/cli@master
+        uses: ./
         with:
-          args: run -i tartiflette_plugin_scalar make style
+          args: make style
       - name: functional test
-        uses: actions/docker/cli@master
+        uses: ./
         with:
-          args: run -i tartiflette_plugin_scalar make test-functional
+          args: make test-functional
       - name: unit test
-        uses: actions/docker/cli@master
+        uses: ./
         with:
-          args: run -i tartiflette_plugin_scalar make test-unit
+          args: make test-unit
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      # - name: build and publish to pypi
-      #   uses: ./.github/actions/pypi/
-      #   env:
-      #     TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
-      #     TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
-      # - name: set version and changelog
-      #   uses: ./.github/actions/shell/
-      #   if: github.ref == 'refs/heads/master'
-      #   with:
-      #     entrypoint: make
-      #     args: github-action-version-and-changelog
-      # - name: release
-      #   uses: ./.github/actions/release/
-      #   if: github.ref == 'refs/heads/master'
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     REPOSITORY: tartiflette
-      #     USERNAME: tartiflette
+      - name: build and publish to pypi
+        uses: ./.github/actions/pypi/
+        env:
+          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+          TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+      - name: set version and changelog
+        uses: ./.github/actions/shell/
+        if: github.ref == 'refs/heads/master'
+        with:
+          entrypoint: make
+          args: github-action-version-and-changelog
+      - name: release
+        uses: ./.github/actions/release/
+        if: github.ref == 'refs/heads/master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: tartiflette-plugin-scalars
+          USERNAME: tartiflette

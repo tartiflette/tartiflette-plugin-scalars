@@ -1,19 +1,8 @@
 # tartiflette-plugin-scalars
 
-### [Unreleased]
+## [Released]
 
-#### Added
 
-* EmailAddress scalar
-* DateTime scalar
-* NegativeFloat scalar
-* NegativeInt scalar
-* NonNegativeFloat scalar
-* NonNegativeInt scalar
-* NonPositiveFloat scalar
-* NonPositiveInt scalar
-* PositiveFloat scalar
-* PositiveInt scalar
-* Long scalar
-* BigInt scalar
-* UnsignedInt scalar
+- [0.x.x]
+  - [0.1.x]
+    - [0.1.0](./changelogs/0.1.0.md) - 2019-10-02

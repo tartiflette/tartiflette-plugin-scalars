@@ -17,6 +17,23 @@ AVAILABLE_SCALARS = [
     ("long", "Long"),
     ("big_int", "BigInt"),
     ("unsigned_int", "UnsignedInt"),
+    ("phone_number", "PhoneNumber"),
+    ("postal_code", "PostalCode"),
+    ("url", "URL"),
+    ("guid", "GUID"),
+    ("hex_color_code", "HexColorCode"),
+    ("hsl", "HSL"),
+    ("hsla", "HSLA"),
+    ("rgb", "RGB"),
+    ("rgba", "RGBA"),
+    ("ipv4", "IPv4"),
+    ("ipv6", "IPv6"),
+    ("isbn", "ISBN"),
+    ("mac", "MAC"),
+    ("port", "Port"),
+    ("us_currency", "USCurrency"),
+    ("json", "JSON"),
+    ("json_object", "JSONObject"),
 ]
 
 

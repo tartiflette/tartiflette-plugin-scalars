@@ -39,11 +39,6 @@ Implemented scalars:
 | Long             | Represents integers between 0 and 2^63            |
 | BigInt           | Represents arbitrary length integers              |
 | UnsignedInt      | Represents integers between 0 and 2^32            |
-
-Coming soon scalars:
-
-| Name             | Description                                       |
-|------------------|---------------------------------------------------|
 | PhoneNumber      | Represents a phone number                         |
 | PostalCode       | Represents a postal code                          |
 | URL              | Represents an Uniform Resource Locator            |
@@ -55,8 +50,8 @@ Coming soon scalars:
 | RGBA             | Red, Green, Blue and Alpha of a color             |
 | IPv4             | Represents an Internet Protocol version 4 address |
 | IPv6             | Represents an Internet Protocol version 6 address |
-| ISBN             | Represents an International Standard Book Number  |
 | MAC              | Represents a Media Access Control address         |
+| ISBN             | Represents an International Standard Book Number  |
 | Port             | Represents a TCP / UDP port                       |
 | USCurrency       | Represents an amount of USD                       |
 | JSON             | Represents a JSON value                           |
