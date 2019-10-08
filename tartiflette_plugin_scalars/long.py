@@ -11,7 +11,7 @@ _MAX_LONG = 9223372036854775808  # 2^63
 _MIN_LONG = -9223372036854775808  # -2^63
 
 
-def _parse_long(value):
+def _parse_long(value): #lgtm [py/similar-function]
     if isinstance(value, (str, float)):
         value = int(value)
     if not isinstance(value, int) or isinstance(value, bool):

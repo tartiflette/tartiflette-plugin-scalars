@@ -1,5 +1,3 @@
-import asyncio
-
 import pytest
 
 from tartiflette import Resolver, create_engine

@@ -1,5 +1,3 @@
-import asyncio
-
 from urllib.parse import ParseResult
 
 import pytest

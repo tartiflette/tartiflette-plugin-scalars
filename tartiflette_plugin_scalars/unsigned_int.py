@@ -11,7 +11,7 @@ _MAX_UNSIGNED_INT = 4294967296  # 2^32
 _MIN_UNSIGNED_INT = 0
 
 
-def _parse_unsigned_int(value):
+def _parse_unsigned_int(value): #lgtm [py/similar-function]
     if isinstance(value, (str, float)):
         value = int(value)
     if not isinstance(value, int) or isinstance(value, bool):
