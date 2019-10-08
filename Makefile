@@ -26,17 +26,21 @@ check-format:
 
 .PHONY: style
 style: check-format check-import
+	make clean
 	pylint tartiflette_plugin_scalars --rcfile=pylintrc
+	make clean
 
 .PHONY: test-unit
 test-unit: clean
 	mkdir -p reports
-	py.test -s tests/unit --junitxml=reports/report_unit_tests.xml --cov . --cov-config .coveragerc --cov-report term-missing --cov-report xml:reports/coverage_func.xml $(EXTRA_ARGS)
+	py.test -s tests/unit --junitxml=reports/report_unit_tests.xml --cov . --cov-config .coveragerc --cov-report term-missing --cov-report xml:reports/coverage_unit.xml $(EXTRA_ARGS)
+	make clean
 
 .PHONY: test-functional
 test-functional: clean
 	mkdir -p reports
-	py.test -s tests/functional --junitxml=reports/report_func_tests.xml --cov . --cov-config .coveragerc --cov-report term-missing --cov-report xml:reports/coverage_unit.xml $(EXTRA_ARGS)
+	py.test -s tests/functional --junitxml=reports/report_func_tests.xml --cov . --cov-config .coveragerc --cov-report term-missing --cov-report xml:reports/coverage_func.xml $(EXTRA_ARGS)
+	make clean
 
 .PHONY: test
 test: test-unit test-functional
