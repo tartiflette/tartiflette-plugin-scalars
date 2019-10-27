@@ -34,7 +34,7 @@ def _parse_date(value: Union[int, str]) -> datetime:
 
 class DateTime:
     @staticmethod
-    def parse_literal(ast: "ValueNode") -> Union[datetime, UNDEFINED_VALUE]:
+    def parse_literal(ast: "ValueNode") -> Union[datetime, "UNDEFINED_VALUE"]:
         """
         gets input from AST node
         :param ast: Node to coerce
