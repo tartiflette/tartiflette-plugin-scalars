@@ -34,7 +34,7 @@ class NaiveDateTime:
         """
         if isinstance(ast, (IntValueNode, StringValueNode)):
             try:
-                return parse_naive_date(ast.value)
+                return _parse_naive(ast.value)
             except (ValueError, TypeError, OverflowError):
                 return UNDEFINED_VALUE
         return UNDEFINED_VALUE
@@ -51,7 +51,7 @@ class NaiveDateTime:
         :raises ValueError: if the value isn't convertible to a datetime
         :raises OverflowError: if the value is an int too large to be a unix timestamp
         """
-        return parse_naive_date(value)
+        return _parse_naive(value)
 
     @staticmethod
     def coerce_output(value: datetime) -> str:
