@@ -6,7 +6,7 @@ from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import IntValueNode, StringValueNode
 
 
-def parse_naive_date(value: Union[int, str]) -> datetime:
+def _parse_naive(value: Union[int, str]) -> datetime:
     if isinstance(value, datetime):
         return value
     if isinstance(value, int) and not isinstance(value, bool):
