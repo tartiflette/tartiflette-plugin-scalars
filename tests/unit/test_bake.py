@@ -11,6 +11,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             {},
             [
                 "scalar EmailAddress",
+                "scalar NaiveDateTime",
                 "scalar DateTime",
                 "scalar NegativeFloat",
                 "scalar NegativeInt",
@@ -47,6 +48,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             {
                 "email_address": {"enabled": False},
                 "datetime": {"enabled": False},
+                "naive_datetime": {"enabled": False},
                 "negative_float": {"enabled": False},
                 "negative_int": {"enabled": False},
                 "non_negative_float": {"enabled": False},
@@ -83,6 +85,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             {
                 "email_address": {"enabled": True},
                 "datetime": {"enabled": True},
+                "naive_datetime": {"enabled": True},
                 "negative_float": {"enabled": True},
                 "negative_int": {"enabled": True},
                 "non_negative_float": {"enabled": True},
@@ -113,6 +116,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             },
             [
                 "scalar EmailAddress",
+                "scalar NaiveDateTime",
                 "scalar DateTime",
                 "scalar NegativeFloat",
                 "scalar NegativeInt",
@@ -148,6 +152,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             "rename_all",
             {
                 "email_address": {"name": "MyEmailAddress"},
+                "naive_datetime": {"name": "MyNaiveDateTime"},
                 "datetime": {"name": "MyDateTime"},
                 "negative_float": {"name": "MyNegativeFloat"},
                 "negative_int": {"name": "MyNegativeInt"},
@@ -180,6 +185,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             },
             [
                 "scalar MyEmailAddress",
+                "scalar MyNaiveDateTime",
                 "scalar MyDateTime",
                 "scalar MyNegativeFloat",
                 "scalar MyNegativeInt",
