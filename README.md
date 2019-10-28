@@ -27,7 +27,8 @@ Implemented scalars:
 | Name             | Description                                       |
 |------------------|---------------------------------------------------|
 | EmailAddress     | Represents an email addresses                     |
-| DateTime         | Represents a date and time object                 |
+| NaiveDateTime    | Represents an optionally naive datetime object    |
+| DateTime         | Represents a non naive datetime object            |
 | NegativeFloat    | Represents a negative floating point number       |
 | NegativeInt      | Represents a negative integer                     |
 | NonNegativeFloat | Represents a positive or 0 floating point number  |
