@@ -34,23 +34,15 @@ def _parse_duration(value: str) -> timedelta:
         "weeks",
     )
     # make a timedelta from a comma separated string
-    # determine if multiple args
-    value = value.replace(" ", "")
-    if "," in value:
-        # multiple
-        arg_list = value.split(",")
-        arg_dict = {}
-        for arg in arg_list:
-            if "=" in arg:
-                arg_dict.update(get_kv(arg))
-            else:
-                raise ValueError(f"Duration key missing '=': < {value} >")
-        return timedelta(**arg_dict)
-    else:
-        # single
-        if "=" in value:
-            arg_dict = get_kv(value)
-            return timedelta(**arg_dict)
+    # remove whitespace and split by comma
+    arg_list = value.replace(" ", "").split(",")
+    arg_dict = {}
+    for arg in arg_list:
+        if "=" in arg:
+            arg_dict.update(get_kv(arg))
+        else:
+            raise ValueError(f"Duration key missing '=': < {value} >")
+    return timedelta(**arg_dict)
 
 
 class Duration:
