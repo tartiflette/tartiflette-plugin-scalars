@@ -10,7 +10,7 @@ from tartiflette.language.ast import (
     StringValueNode,
 )
 
-from tartiflette_plugin_scalars.datetime import DateTime
+from tartiflette_plugin_scalars.naive_datetime import NaiveDateTime
 
 
 @pytest.mark.parametrize(
@@ -34,7 +34,7 @@ from tartiflette_plugin_scalars.datetime import DateTime
     ],
 )
 def test_coerce_input(input_val, exception, output_val):
-    scalar = DateTime()
+    scalar = NaiveDateTime()
     if exception:
         with pytest.raises(exception):
             scalar.coerce_input(input_val)
@@ -50,7 +50,7 @@ def test_coerce_input(input_val, exception, output_val):
     ],
 )
 def test_coerce_output(input_val, output_val):
-    scalar = DateTime()
+    scalar = NaiveDateTime()
     assert scalar.coerce_output(input_val) == output_val
 
 
@@ -58,9 +58,7 @@ def test_coerce_output(input_val, output_val):
     "input_val,output_val",
     [
         (
-            DirectiveDefinitionNode(
-                arguments=[], name="directive", locations=None
-            ),
+            DirectiveDefinitionNode(arguments=[], name="directive", locations=None),
             UNDEFINED_VALUE,
         ),
         (StringValueNode(value="nok"), UNDEFINED_VALUE),
@@ -69,11 +67,8 @@ def test_coerce_output(input_val, output_val):
             StringValueNode(value="2019-09-20T14:30:28+00:00"),
             datetime.datetime(2019, 9, 20, 14, 30, 28, tzinfo=tzutc()),
         ),
-        (
-            IntValueNode(value=1568988000),
-            datetime.datetime(2019, 9, 20, 14, 0, 0),
-        ),
+        (IntValueNode(value=1568988000), datetime.datetime(2019, 9, 20, 14, 0, 0)),
     ],
 )
 def test_parse_literal(input_val, output_val):
-    assert DateTime().parse_literal(input_val) == output_val
+    assert NaiveDateTime().parse_literal(input_val) == output_val
