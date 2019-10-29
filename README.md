@@ -27,6 +27,7 @@ Implemented scalars:
 | Name             | Description                                       |
 |------------------|---------------------------------------------------|
 | EmailAddress     | Represents an email addresses                     |
+| Duration         | Represents a timedelta object                     |
 | DateTime         | Represents a date and time object                 |
 | NegativeFloat    | Represents a negative floating point number       |
 | NegativeInt      | Represents a negative integer                     |
