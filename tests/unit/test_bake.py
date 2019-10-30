@@ -40,6 +40,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar USCurrency",
                 "scalar JSON",
                 "scalar JSONObject",
+                "scalar GeoJSON",
             ],
         ),
         (
@@ -75,6 +76,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "us_currency": {"enabled": False},
                 "json": {"enabled": False},
                 "json_object": {"enabled": False},
+                "geo_json": {"enabled": False},
             },
             [],
         ),
@@ -110,6 +112,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "us_currency": {"enabled": True},
                 "json": {"enabled": True},
                 "json_object": {"enabled": True},
+                "geo_json": {"enabled": True},
             },
             [
                 "scalar EmailAddress",
@@ -142,6 +145,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar USCurrency",
                 "scalar JSON",
                 "scalar JSONObject",
+                "scalar GeoJSON",
             ],
         ),
         (
@@ -177,6 +181,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "us_currency": {"name": "MyUSCurrency"},
                 "json": {"name": "MyJSON"},
                 "json_object": {"name": "MyJSONObject"},
+                "geo_json": {"name": "MyGeoJSON"},
             },
             [
                 "scalar MyEmailAddress",
@@ -209,6 +214,7 @@ from tartiflette_plugin_scalars import _generate_scalars
                 "scalar MyUSCurrency",
                 "scalar MyJSON",
                 "scalar MyJSONObject",
+                "scalar MyGeoJSON",
             ],
         ),
     ],

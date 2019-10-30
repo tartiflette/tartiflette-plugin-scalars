@@ -34,6 +34,7 @@ AVAILABLE_SCALARS = [
     ("us_currency", "USCurrency"),
     ("json", "JSON"),
     ("json_object", "JSONObject"),
+    ("geo_json", "GeoJSON"),
 ]
 
 

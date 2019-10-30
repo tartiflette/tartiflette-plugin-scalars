@@ -106,3 +106,4 @@ engine = await create_engine(
 | USCurrency       | us_currency        | Represents an amount of USD                       |
 | JSON             | json               | Represents a JSON value                           |
 | JSONObject       | json_object        | Represents a JSON object                          |
+| GeoJSON          | geo_json           | Represents a GeoJSON value                        |
