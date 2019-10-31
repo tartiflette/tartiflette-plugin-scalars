@@ -74,36 +74,36 @@ engine = await create_engine(
 
 ## Implemented scalars:
 
-| Name             | Configuration key  | Description                                       |
-|------------------|--------------------|---------------------------------------------------|
-| EmailAddress     | email_address      | Represents an email addresses                     |
-| DateTime         | datetime           | Represents a date and time object                 |
-| NegativeFloat    | negative_float     | Represents a negative floating point number       |
-| NegativeInt      | negative_int       | Represents a negative integer                     |
-| NonNegativeFloat | non_negative_float | Represents a positive or 0 floating point number  |
-| NonNegativeInt   | non_negative_int   | Represents a positive or 0 integer                |
-| PositiveFloat    | positive_float     | Represents a positive floating point number       |
-| PositiveInt      | positive_int       | Represents a positive integer                     |
-| NonPositiveFloat | non_positive_float | Represents a negative or 0 floating point number  |
-| NonPositiveInt   | non_positive_int   | Represents a negative or 0 integer                |
-| Long             | long               | Represents integers between 0 and 2^63            |
-| BigInt           | big_int            | Represents arbitrary length integers              |
-| UnsignedInt      | unsigned_int       | Represents integers between 0 and 2^32            |
-| PhoneNumber      | phone_number       | Represents a phone number                         |
-| PostalCode       | postal_code        | Represents a postal code                          |
-| URL              | url                | Represents an Uniform Resource Locator            |
-| GUID             | guid               | Represents a Globally Unique IDentifier           |
-| HexColorCode     | hex_color_code     | Hexadecimal representation of a color             |
-| HSL              | hsl                | Hue, Saturation and Lightness of a color          |
-| HSLA             | hsla               | Hue, Saturation, Lightness and Alpha of a color   |
-| RGB              | rgb                | Red, Green, Blue of a color                       |
-| RGBA             | rgba               | Red, Green, Blue and Alpha of a color             |
-| IPv4             | ipv4               | Represents an Internet Protocol version 4 address |
-| IPv6             | ipv6               | Represents an Internet Protocol version 6 address |
-| MAC              | mac                | Represents a Media Access Control address         |
-| ISBN             | isbn               | Represents an International Standard Book Number  |
-| Port             | port               | Represents a TCP / UDP port                       |
-| USCurrency       | us_currency        | Represents an amount of USD                       |
-| JSON             | json               | Represents a JSON value                           |
-| JSONObject       | json_object        | Represents a JSON object                          |
-| GeoJSON          | geo_json           | Represents a GeoJSON value                        |
+| Name                                   | Configuration key  | Description                                       |
+|----------------------------------------|--------------------|---------------------------------------------------|
+| EmailAddress                           | email_address      | Represents an email addresses                     |
+| DateTime                               | datetime           | Represents a date and time object                 |
+| NegativeFloat                          | negative_float     | Represents a negative floating point number       |
+| NegativeInt                            | negative_int       | Represents a negative integer                     |
+| NonNegativeFloat                       | non_negative_float | Represents a positive or 0 floating point number  |
+| NonNegativeInt                         | non_negative_int   | Represents a positive or 0 integer                |
+| PositiveFloat                          | positive_float     | Represents a positive floating point number       |
+| PositiveInt                            | positive_int       | Represents a positive integer                     |
+| NonPositiveFloat                       | non_positive_float | Represents a negative or 0 floating point number  |
+| NonPositiveInt                         | non_positive_int   | Represents a negative or 0 integer                |
+| Long                                   | long               | Represents integers between 0 and 2^63            |
+| BigInt                                 | big_int            | Represents arbitrary length integers              |
+| UnsignedInt                            | unsigned_int       | Represents integers between 0 and 2^32            |
+| PhoneNumber                            | phone_number       | Represents a phone number                         |
+| PostalCode                             | postal_code        | Represents a postal code                          |
+| URL                                    | url                | Represents an Uniform Resource Locator            |
+| GUID                                   | guid               | Represents a Globally Unique IDentifier           |
+| HexColorCode                           | hex_color_code     | Hexadecimal representation of a color             |
+| HSL                                    | hsl                | Hue, Saturation and Lightness of a color          |
+| HSLA                                   | hsla               | Hue, Saturation, Lightness and Alpha of a color   |
+| RGB                                    | rgb                | Red, Green, Blue of a color                       |
+| RGBA                                   | rgba               | Red, Green, Blue and Alpha of a color             |
+| IPv4                                   | ipv4               | Represents an Internet Protocol version 4 address |
+| IPv6                                   | ipv6               | Represents an Internet Protocol version 6 address |
+| MAC                                    | mac                | Represents a Media Access Control address         |
+| ISBN                                   | isbn               | Represents an International Standard Book Number  |
+| Port                                   | port               | Represents a TCP / UDP port                       |
+| USCurrency                             | us_currency        | Represents an amount of USD                       |
+| JSON                                   | json               | Represents a JSON value                           |
+| JSONObject                             | json_object        | Represents a JSON object                          |
+| [GeoJSON](./docs/geo_json.md)          | geo_json           | Represents a GeoJSON value                        |

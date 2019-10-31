@@ -29,6 +29,16 @@ from tartiflette_plugin_scalars.geo_json import GeoJSON
             Point((-115.81, 37.24)),
         ),
         (
+            '{"coordinates": [-115.123456123456, 37.123456123456], "type": "Point"}',
+            None,
+            Point((-115.123456, 37.123456)),
+        ),
+        (
+            '{"coordinates": [-115.12345678, 37.12345678], "type": "Point"}',
+            None,
+            Point((-115.123457, 37.123457)),
+        ),
+        (
             '{"coordinates": [[-155.52, 19.61], [-156.22, 20.74], [-157.97, 21.46]], "type": "MultiPoint"}',
             None,
             MultiPoint([(-155.52, 19.61), (-156.22, 20.74), (-157.97, 21.46)]),
@@ -103,7 +113,6 @@ def test_coerce_input(input_val, exception, output_val):
             scalar.coerce_input(input_val)
     else:
         assert scalar.coerce_input(input_val) == output_val
-        assert input_val == str(output_val)
 
 
 @pytest.mark.parametrize(
@@ -112,6 +121,14 @@ def test_coerce_input(input_val, exception, output_val):
         (
             Point((-115.81, 37.24)),
             '{"coordinates": [-115.81, 37.24], "type": "Point"}',
+        ),
+        (
+            Point((-115.123456123456, 37.123456123456)),
+            '{"coordinates": [-115.123456, 37.123456], "type": "Point"}',
+        ),
+        (
+            Point((-115.123456123456, 37.123456123456), precision=12),
+            '{"coordinates": [-115.123456123456, 37.123456123456], "type": "Point"}',
         ),
         (
             MultiPoint([(-155.52, 19.61), (-156.22, 20.74), (-157.97, 21.46)]),
