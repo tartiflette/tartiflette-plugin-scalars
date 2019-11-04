@@ -2,8 +2,9 @@ import datetime
 
 import pytest
 
-from geojson import Point
 from tartiflette import Resolver, create_engine
+
+from geojson import Point
 
 
 @pytest.mark.asyncio

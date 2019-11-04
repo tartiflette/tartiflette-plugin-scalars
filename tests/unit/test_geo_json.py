@@ -1,5 +1,8 @@
 import pytest
 
+from tartiflette.constants import UNDEFINED_VALUE
+from tartiflette.language.ast import DirectiveDefinitionNode, StringValueNode
+
 from geojson import (
     Feature,
     FeatureCollection,
@@ -11,9 +14,6 @@ from geojson import (
     Point,
     Polygon,
 )
-from tartiflette.constants import UNDEFINED_VALUE
-from tartiflette.language.ast import DirectiveDefinitionNode, StringValueNode
-
 from tartiflette_plugin_scalars.geo_json import GeoJSON
 
 

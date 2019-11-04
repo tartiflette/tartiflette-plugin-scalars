@@ -2,10 +2,10 @@ import json
 
 from typing import Any
 
-import geojson
-
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
+
+import geojson
 
 
 def _parse_json(value: str) -> Any:
