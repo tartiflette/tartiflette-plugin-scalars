@@ -72,6 +72,26 @@ engine = await create_engine(
 )
 ```
 
+Some plugins also accept more specific configuration values, that can be
+specified in a sub-dict called `options`. The options will be
+passed to the scalar at instanciation time as `**kwargs` to the `init()` method.
+
+```
+engine = await create_engine(
+    sdl=sdl,
+    modules=[
+        {
+            "name": "tartiflette_plugin_scalars",
+            "config": {
+                "datetime": {"name": "MyDatetime"},
+                "postal_code": {"enabled": False, "options": {"key": "value"}},
+            },
+        }
+    ],
+    schema_name="scalars",
+)
+```
+
 ## Implemented scalars:
 
 | Name                                   | Configuration key  | Description                                       |
