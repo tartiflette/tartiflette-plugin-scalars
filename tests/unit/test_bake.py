@@ -12,6 +12,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             [
                 "scalar EmailAddress",
                 "scalar DateTime",
+                "scalar Duration",
                 "scalar NegativeFloat",
                 "scalar NegativeInt",
                 "scalar NonNegativeFloat",
@@ -47,6 +48,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             {
                 "email_address": {"enabled": False},
                 "datetime": {"enabled": False},
+                "duration": {"enabled": False},
                 "negative_float": {"enabled": False},
                 "negative_int": {"enabled": False},
                 "non_negative_float": {"enabled": False},
@@ -83,6 +85,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             {
                 "email_address": {"enabled": True},
                 "datetime": {"enabled": True},
+                "duration": {"enabled": True},
                 "negative_float": {"enabled": True},
                 "negative_int": {"enabled": True},
                 "non_negative_float": {"enabled": True},
@@ -114,6 +117,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             [
                 "scalar EmailAddress",
                 "scalar DateTime",
+                "scalar Duration",
                 "scalar NegativeFloat",
                 "scalar NegativeInt",
                 "scalar NonNegativeFloat",
@@ -149,6 +153,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             {
                 "email_address": {"name": "MyEmailAddress"},
                 "datetime": {"name": "MyDateTime"},
+                "duration": {"name": "MyDuration"},
                 "negative_float": {"name": "MyNegativeFloat"},
                 "negative_int": {"name": "MyNegativeInt"},
                 "non_negative_float": {"name": "MyNonNegativeFloat"},
@@ -181,6 +186,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             [
                 "scalar MyEmailAddress",
                 "scalar MyDateTime",
+                "scalar MyDuration",
                 "scalar MyNegativeFloat",
                 "scalar MyNegativeInt",
                 "scalar MyNonNegativeFloat",
