@@ -35,6 +35,7 @@ AVAILABLE_SCALARS = [
     ("us_currency", "USCurrency"),
     ("json", "JSON"),
     ("json_object", "JSONObject"),
+    ("geo_json", "GeoJSON"),
 ]
 
 
@@ -50,7 +51,9 @@ def _generate_scalars(schema_name, config):
             scalar_class = getattr(scalar_mod, scalar[1])
 
             scalar_name = scalar_config.get("name") or scalar[1]
-            Scalar(name=scalar_name, schema_name=schema_name)(scalar_class())
+            Scalar(name=scalar_name, schema_name=schema_name)(
+                scalar_class(**scalar_config.get("options", {}))
+            )
             scalars.append(_SCALAR_TEMPLATE.format(scalar_name))
 
     return scalars
