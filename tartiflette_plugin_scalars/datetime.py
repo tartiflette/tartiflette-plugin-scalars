@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Union
 
 from dateutil.parser import isoparse
@@ -10,7 +10,7 @@ def _get_datetime(value: Union[int, str]) -> datetime:
     if isinstance(value, datetime):
         return value
     if isinstance(value, int) and not isinstance(value, bool):
-        return datetime.utcfromtimestamp(value)
+        return datetime.fromtimestamp(value, tz=timezone.utc)
     if isinstance(value, str):
         return isoparse(value)
     raise TypeError(
