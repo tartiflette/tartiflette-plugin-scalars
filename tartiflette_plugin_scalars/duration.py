@@ -64,4 +64,7 @@ class Duration:
 
     @staticmethod
     def coerce_output(value: timedelta) -> str:
-        return str(value)
+        if isinstance(value, timedelta):
+            return value.__str__()
+        else:
+            raise TypeError(f"Duration cannot represent value: < {value} >")
