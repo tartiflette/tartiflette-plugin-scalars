@@ -49,6 +49,19 @@ def test_parse_literal(input_value, output_value):
         # GOOD VALUES
         ("days=1, seconds=2", None, timedelta(days=1, seconds=2)),
         ("hours=1, weeks=2", None, timedelta(weeks=2, hours=1)),
+        (
+            "days=1,seconds=1,microseconds=1,milliseconds=1,minutes=1,hours=1,weeks=1",
+            None,
+            timedelta(
+                days=1,
+                seconds=1,
+                microseconds=1,
+                milliseconds=1,
+                minutes=1,
+                hours=1,
+                weeks=1,
+            ),
+        ),
     ],
 )
 def test_coerce_input(input_value, exception, output_value):
