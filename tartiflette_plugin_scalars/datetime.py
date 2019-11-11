@@ -46,13 +46,13 @@ class DateTime:
         return UNDEFINED_VALUE
 
     @staticmethod
-    def coerce_input(value: Union[str, int]) -> datetime:
+    def coerce_input(value: str) -> datetime:
         """
         Gets a non-naive datetime from input value
         :param value:
-        :type value: Union[str, int]
+        :type value: str
         :return: the value as a non naive datetime
-        :raises TypeError: if the value isn't a string or int
+        :raises TypeError: if the value isn't a string
         :raises ValueError: if the value isn't convertible to a datetime or is tz naive
         :rtype: datetime
         """
