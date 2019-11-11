@@ -18,7 +18,7 @@ from tartiflette_plugin_scalars.datetime import DateTime
     [
         (False, TypeError, None),
         ("", ValueError, None),
-        (2 ** 128, OverflowError, None),
+        (2 ** 128, TypeError, None),
         ("dailymotion", ValueError, None),
         (
             "2019-09-20T14:30:28+00:00",
@@ -26,7 +26,7 @@ from tartiflette_plugin_scalars.datetime import DateTime
             datetime.datetime(2019, 9, 20, 14, 30, 28, tzinfo=tzutc()),
         ),
         ("2019-09-20T14:30:28", ValueError, None),
-        (1568988000, None, datetime.datetime(2019, 9, 20, 14, 0, 0, tzinfo=tzutc())),
+        (1568988000, TypeError, None),
         (datetime.datetime(2019, 9, 9, 16, 0, 0), ValueError, None),
     ],
 )
@@ -68,10 +68,7 @@ def test_coerce_output(input_val, output_val):
             datetime.datetime(2019, 9, 20, 14, 30, 28, tzinfo=tzutc()),
         ),
         (StringValueNode(value="2019-09-20T14:30:28"), UNDEFINED_VALUE),
-        (
-            IntValueNode(value=1568988000),
-            datetime.datetime(2019, 9, 20, 14, 0, 0, tzinfo=tzutc()),
-        ),
+        (IntValueNode(value=1568988000), UNDEFINED_VALUE),
     ],
 )
 def test_parse_literal(input_val, output_val):

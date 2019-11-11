@@ -1,24 +1,20 @@
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Union
 
 from dateutil.parser import isoparse
 from tartiflette.constants import UNDEFINED_VALUE
-from tartiflette.language.ast import IntValueNode, StringValueNode
+from tartiflette.language.ast import StringValueNode
 
 
-def _get_datetime(value: Union[int, str]) -> datetime:
+def _get_datetime(value: str) -> datetime:
     if isinstance(value, datetime):
         return value
-    if isinstance(value, int) and not isinstance(value, bool):
-        return datetime.fromtimestamp(value, tz=timezone.utc)
     if isinstance(value, str):
         return isoparse(value)
-    raise TypeError(
-        f"DateTime cannot represent values other than strings and ints: < {value} >"
-    )
+    raise TypeError(f"DateTime cannot represent values other than strings: < {value} >")
 
 
-def _parse_date(value: Union[int, str]) -> datetime:
+def _parse_date(value: str) -> datetime:
     try:
         # get datetime, mirror behavior of NaiveDateTime
         value = _get_datetime(value)
@@ -42,7 +38,7 @@ class DateTime:
         :return: the value as a non-naive datetime object
         :rtype: Union[datetime, UNDEFINED_VALUE]
         """
-        if isinstance(ast, (IntValueNode, StringValueNode)):
+        if isinstance(ast, StringValueNode):
             try:
                 return _parse_date(ast.value)
             except (ValueError, TypeError, OverflowError):
