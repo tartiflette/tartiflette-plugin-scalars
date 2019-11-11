@@ -24,6 +24,9 @@ def _parse_duration(value: str) -> timedelta:
             else:
                 raise ValueError(f"Duration argument has invalid key: < {_arg} >")
 
+    if not isinstance(value, str):
+        raise TypeError(f"<{value}> is not a string!")
+
     VALID_KEYS = (
         "days",
         "seconds",
@@ -56,7 +59,7 @@ class Duration:
         return UNDEFINED_VALUE
 
     @staticmethod
-    def coerce_input(value: Union[str, int]) -> timedelta:
+    def coerce_input(value: str) -> timedelta:
         return _parse_duration(value)
 
     @staticmethod
