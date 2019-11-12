@@ -11,6 +11,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             {},
             [
                 "scalar EmailAddress",
+                "scalar NaiveDateTime",
                 "scalar DateTime",
                 "scalar Duration",
                 "scalar NegativeFloat",
@@ -49,6 +50,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             {
                 "email_address": {"enabled": False},
                 "datetime": {"enabled": False},
+                "naive_datetime": {"enabled": False},
                 "duration": {"enabled": False},
                 "negative_float": {"enabled": False},
                 "negative_int": {"enabled": False},
@@ -87,6 +89,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             {
                 "email_address": {"enabled": True},
                 "datetime": {"enabled": True},
+                "naive_datetime": {"enabled": True},
                 "duration": {"enabled": True},
                 "negative_float": {"enabled": True},
                 "negative_int": {"enabled": True},
@@ -119,6 +122,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             },
             [
                 "scalar EmailAddress",
+                "scalar NaiveDateTime",
                 "scalar DateTime",
                 "scalar Duration",
                 "scalar NegativeFloat",
@@ -156,6 +160,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             "rename_all",
             {
                 "email_address": {"name": "MyEmailAddress"},
+                "naive_datetime": {"name": "MyNaiveDateTime"},
                 "datetime": {"name": "MyDateTime"},
                 "duration": {"name": "MyDuration"},
                 "negative_float": {"name": "MyNegativeFloat"},
@@ -190,6 +195,7 @@ from tartiflette_plugin_scalars import _generate_scalars
             },
             [
                 "scalar MyEmailAddress",
+                "scalar MyNaiveDateTime",
                 "scalar MyDateTime",
                 "scalar MyDuration",
                 "scalar MyNegativeFloat",
