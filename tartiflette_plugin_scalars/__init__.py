@@ -5,6 +5,7 @@ from tartiflette import Scalar
 _SCALAR_TEMPLATE = "scalar {0}"
 AVAILABLE_SCALARS = [
     ("email_address", "EmailAddress"),
+    ("naive_datetime", "NaiveDateTime"),
     ("datetime", "DateTime"),
     ("negative_float", "NegativeFloat"),
     ("negative_int", "NegativeInt"),
@@ -44,9 +45,7 @@ def _generate_scalars(schema_name, config):
     for scalar in AVAILABLE_SCALARS:
         scalar_config = config.get(scalar[0], {})
         if scalar_config.get("enabled") is not False:
-            scalar_mod = import_module(
-                f"tartiflette_plugin_scalars.{scalar[0]}"
-            )
+            scalar_mod = import_module(f"tartiflette_plugin_scalars.{scalar[0]}")
             scalar_class = getattr(scalar_mod, scalar[1])
 
             scalar_name = scalar_config.get("name") or scalar[1]
