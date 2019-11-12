@@ -5,10 +5,7 @@ from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
 
 
-def _parse_duration(value: str) -> timedelta:
-    if not isinstance(value, str):
-        raise TypeError(f"<{value}> is not a string!")
-
+def _get_kv(arg: str) -> dict:
     VALID_KEYS = (
         "days",
         "seconds",
@@ -19,28 +16,33 @@ def _parse_duration(value: str) -> timedelta:
         "weeks",
     )
 
+    try:
+        key, value = arg.split("=")
+    except ValueError:
+        raise ValueError(
+            f"Duration argument has more or less than 2 elements: < {arg} >"
+        )
+    else:
+        if key in VALID_KEYS:
+            try:
+                return {key: int(value)}
+            except ValueError:
+                raise ValueError(f"Duration argument value is not an int: < {arg} >")
+        else:
+            raise ValueError(f"Duration argument has invalid key: < {arg} >")
+
+
+def _parse_duration(value: str) -> timedelta:
+    if not isinstance(value, str):
+        raise TypeError(f"<{value}> is not a string!")
+
     # make a timedelta from a comma separated string
     # remove whitespace and split by comma
     arg_list = value.replace(" ", "").split(",")
     arg_dict = {}
     for arg in arg_list:
         if "=" in arg:
-            try:
-                key, value = arg.split("=")
-            except ValueError:
-                raise ValueError(
-                    f"Duration argument has more or less than 2 elements: < {arg} >"
-                )
-            else:
-                if key in VALID_KEYS:
-                    try:
-                        arg_dict.update({key: int(value)})
-                    except ValueError:
-                        raise ValueError(
-                            f"Duration argument value is not an int: < {arg} >"
-                        )
-                else:
-                    raise ValueError(f"Duration argument has invalid key: < {arg} >")
+            arg_dict.update(_get_kv(arg))
         else:
             raise ValueError(f"Duration key missing '=': < {value} >")
     return timedelta(**arg_dict)
