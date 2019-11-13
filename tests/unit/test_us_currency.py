@@ -2,7 +2,6 @@ import datetime
 
 import pytest
 
-from dateutil.tz import tzutc
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import (
     DirectiveDefinitionNode,
@@ -10,6 +9,7 @@ from tartiflette.language.ast import (
     StringValueNode,
 )
 
+from dateutil.tz import tzutc
 from tartiflette_plugin_scalars.us_currency import USCurrency
 
 

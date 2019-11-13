@@ -24,7 +24,7 @@ class IPv4:
 
     @staticmethod
     def parse_literal(
-        ast: "ValueNode"
+        ast: "ValueNode",
     ) -> Union[IPv4Address, "UNDEFINED_VALUE"]:
         """
         Loads the input value from an AST node

@@ -1,9 +1,10 @@
 from datetime import datetime
 from typing import Union
 
-from dateutil.parser import isoparse
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
+
+from dateutil.parser import isoparse
 
 
 def _get_datetime(value: str) -> datetime:
