@@ -1,9 +1,10 @@
 from datetime import datetime
 from typing import Union  # pylint: disable=unused-import
 
-from dateutil.parser import isoparse
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import IntValueNode, StringValueNode
+
+from dateutil.parser import isoparse
 
 
 def _parse_date(value: Union[int, str]) -> datetime:
