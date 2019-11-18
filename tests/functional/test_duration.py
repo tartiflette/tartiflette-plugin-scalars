@@ -54,7 +54,10 @@ async def test_duration_q_nok():
 
     assert result["data"]["duration"] is None
     assert len(result["errors"]) == 1
-    assert result["errors"][0]["message"] == "Duration cannot represent value: < nok >"
+    assert (
+        result["errors"][0]["message"]
+        == "Duration cannot represent value: < nok >"
+    )
 
 
 # duration mutation ok
@@ -109,8 +112,13 @@ async def test_duration_m_nok():
         schema_name="test_duration_mutation_nok",
     )
 
-    result = await engine.execute("""mutation durationTest{duration(input: "nok")}""")
+    result = await engine.execute(
+        """mutation durationTest{duration(input: "nok")}"""
+    )
 
     assert result["data"] is None
     assert len(result["errors"]) == 1
-    assert result["errors"][0]["message"] == "Value nok is not of correct type Duration"
+    assert (
+        result["errors"][0]["message"]
+        == "Value nok is not of correct type Duration"
+    )

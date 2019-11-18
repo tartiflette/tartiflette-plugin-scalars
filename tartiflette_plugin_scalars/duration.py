@@ -4,17 +4,18 @@ from typing import Union
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import StringValueNode
 
+_VALID_KEYS = (
+    "days",
+    "seconds",
+    "microseconds",
+    "milliseconds",
+    "minutes",
+    "hours",
+    "weeks",
+)
+
 
 def _get_kv(arg: str) -> dict:
-    VALID_KEYS = (
-        "days",
-        "seconds",
-        "microseconds",
-        "milliseconds",
-        "minutes",
-        "hours",
-        "weeks",
-    )
 
     try:
         key, value = arg.split("=")
@@ -23,11 +24,13 @@ def _get_kv(arg: str) -> dict:
             f"Duration argument has more or less than 2 elements: < {arg} >"
         )
     else:
-        if key in VALID_KEYS:
+        if key in _VALID_KEYS:
             try:
                 return {key: int(value)}
             except ValueError:
-                raise ValueError(f"Duration argument value is not an int: < {arg} >")
+                raise ValueError(
+                    f"Duration argument value is not an int: < {arg} >"
+                )
         else:
             raise ValueError(f"Duration argument has invalid key: < {arg} >")
 
@@ -66,5 +69,4 @@ class Duration:
     def coerce_output(value: timedelta) -> str:
         if isinstance(value, timedelta):
             return value.__str__()
-        else:
-            raise TypeError(f"Duration cannot represent value: < {value} >")
+        raise TypeError(f"Duration cannot represent value: < {value} >")
