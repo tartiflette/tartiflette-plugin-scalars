@@ -7,11 +7,12 @@ import pytest
 # TARTIFLETTE
 from tartiflette.constants import UNDEFINED_VALUE
 from tartiflette.language.ast import (
-    DirectiveDefinitionNode,
-    StringValueNode,
-    IntValueNode,
     BooleanValueNode,
+    DirectiveDefinitionNode,
+    IntValueNode,
+    StringValueNode,
 )
+
 from tartiflette_plugin_scalars.duration import Duration
 
 
@@ -22,10 +23,15 @@ from tartiflette_plugin_scalars.duration import Duration
         (BooleanValueNode(value=True), UNDEFINED_VALUE),
         (IntValueNode(value=12345), UNDEFINED_VALUE),
         (
-            DirectiveDefinitionNode(arguments=[], name="directive", locations=[]),
+            DirectiveDefinitionNode(
+                arguments=[], name="directive", locations=[]
+            ),
             UNDEFINED_VALUE,
         ),
-        (StringValueNode(value="days=1, seconds=20"), timedelta(days=1, seconds=20)),
+        (
+            StringValueNode(value="days=1, seconds=20"),
+            timedelta(days=1, seconds=20),
+        ),
         (StringValueNode(value="bad_value"), UNDEFINED_VALUE),
     ],
 )

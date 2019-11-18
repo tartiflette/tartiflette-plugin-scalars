@@ -27,7 +27,9 @@ def _get_kv(arg: str) -> dict:
             try:
                 return {key: int(value)}
             except ValueError:
-                raise ValueError(f"Duration argument value is not an int: < {arg} >")
+                raise ValueError(
+                    f"Duration argument value is not an int: < {arg} >"
+                )
         else:
             raise ValueError(f"Duration argument has invalid key: < {arg} >")
 
