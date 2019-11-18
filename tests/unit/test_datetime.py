@@ -46,7 +46,10 @@ def test_coerce_input(input_val, exception, output_val):
             datetime.datetime(2019, 9, 9, 16, 0, 0, tzinfo=tzutc()),
             "2019-09-09T16:00:00+00:00",
         ),
-        (datetime.datetime(2018, 8, 16, tzinfo=tzutc()), "2018-08-16T00:00:00+00:00"),
+        (
+            datetime.datetime(2018, 8, 16, tzinfo=tzutc()),
+            "2018-08-16T00:00:00+00:00",
+        ),
     ],
 )
 def test_coerce_output(input_val, output_val):
@@ -58,7 +61,9 @@ def test_coerce_output(input_val, output_val):
     "input_val,output_val",
     [
         (
-            DirectiveDefinitionNode(arguments=[], name="directive", locations=None),
+            DirectiveDefinitionNode(
+                arguments=[], name="directive", locations=None
+            ),
             UNDEFINED_VALUE,
         ),
         (StringValueNode(value="nok"), UNDEFINED_VALUE),
