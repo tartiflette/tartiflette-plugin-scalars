@@ -57,7 +57,9 @@ async def test_naive_datetime_nok():
 
 @pytest.mark.asyncio
 async def test_naive_datetime_mutation_ok():
-    @Resolver("Mutation.dateTime", schema_name="test_naive_datetime_mutation_ok")
+    @Resolver(
+        "Mutation.dateTime", schema_name="test_naive_datetime_mutation_ok"
+    )
     async def date_time_resolver(*_args, **_kwargs):
         return True
 
@@ -84,7 +86,9 @@ async def test_naive_datetime_mutation_ok():
 
 @pytest.mark.asyncio
 async def test_date_time_mutation_nok():
-    @Resolver("Mutation.naiveDateTime", schema_name="test_date_time_mutation_nok")
+    @Resolver(
+        "Mutation.naiveDateTime", schema_name="test_date_time_mutation_nok"
+    )
     async def dateTime_resolver(*_args, **_kwargs):
         return True
 
