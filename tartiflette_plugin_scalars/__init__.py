@@ -5,8 +5,9 @@ from tartiflette import Scalar
 _SCALAR_TEMPLATE = "scalar {0}"
 AVAILABLE_SCALARS = [
     ("email_address", "EmailAddress"),
-    ("naive_datetime", "NaiveDateTime"),
     ("datetime", "DateTime"),
+    ("naive_datetime", "NaiveDateTime"),
+    ("duration", "Duration"),
     ("negative_float", "NegativeFloat"),
     ("negative_int", "NegativeInt"),
     ("non_negative_float", "NonNegativeFloat"),

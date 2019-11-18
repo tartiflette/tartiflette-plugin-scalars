@@ -4,6 +4,7 @@
 
 * GeoJSON scalar
 * NaiveDateTime scalar
+* Duration Scalar
 * Documentation folder for details on each scalar
 * Adds `options` dict to configure scalar instances
 

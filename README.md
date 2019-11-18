@@ -99,6 +99,7 @@ engine = await create_engine(
 | EmailAddress                           | email_address      | Represents an email addresses                     |
 | DateTime                               | datetime           | Represents an optionally naive datetime object    |
 | NaiveDateTime                          | naive_datetime     | Represents a non naive datetime object            |
+| Duration                               | duration           | Represents a timedelta object                     |
 | NegativeFloat                          | negative_float     | Represents a negative floating point number       |
 | NegativeInt                            | negative_int       | Represents a negative integer                     |
 | NonNegativeFloat                       | non_negative_float | Represents a positive or 0 floating point number  |
