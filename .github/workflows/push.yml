@@ -38,5 +38,5 @@ jobs:
         if: github.ref == 'refs/heads/master'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOSITORY: tartiflette-aiohttp
+          REPOSITORY: tartiflette-plugin-scalars
           USERNAME: tartiflette
