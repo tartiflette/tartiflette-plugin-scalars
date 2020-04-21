@@ -115,6 +115,7 @@ engine = await create_engine(
 | PostalCode                             | postal_code        | Represents a postal code                          |
 | URL                                    | url                | Represents an Uniform Resource Locator            |
 | GUID                                   | guid               | Represents a Globally Unique IDentifier           |
+| UUID                                   | uuid               | Represents a Universally Unique IDentifier        |
 | HexColorCode                           | hex_color_code     | Hexadecimal representation of a color             |
 | HSL                                    | hsl                | Hue, Saturation and Lightness of a color          |
 | HSLA                                   | hsla               | Hue, Saturation, Lightness and Alpha of a color   |
