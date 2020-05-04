@@ -14,3 +14,4 @@ Contributors
 ------------
 
 * [@AutumnalDream](https://github.com/AutumnalDream)
+* [@thegrymek](https://github.com/thegrymek)
