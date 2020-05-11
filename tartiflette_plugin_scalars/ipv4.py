@@ -11,7 +11,7 @@ def _parse_ipv4(value: str) -> IPv4Address:
     if isinstance(value, IPv4Address):
         return value
     if isinstance(value, IPv6Address):
-        raise ValueError(f"IPv4 cannot be used to represent IPv6 addresses")
+        raise ValueError("IPv4 cannot be used to represent IPv6 addresses")
     raise TypeError(
         f"IPv4Address cannot represent values other than strings and IPv4Address: < {value} >"
     )
