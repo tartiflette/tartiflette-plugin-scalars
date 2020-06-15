@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 _TEST_REQUIRE = [
     "pytest==5.4.3",
-    "pytest-cov==2.9.0",
+    "pytest-cov==2.10.0",
     "pytest-asyncio==0.12.0",
     "pylint==2.5.3",
     "black==19.10b0",
