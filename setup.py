@@ -6,7 +6,7 @@ _TEST_REQUIRE = [
     "pytest-asyncio==0.14.0",
     "pylint==2.5.3",
     "black==19.10b0",
-    "isort==4.3.21",
+    "isort==5.3.2",
 ]
 
 _VERSION = "0.3.0"
