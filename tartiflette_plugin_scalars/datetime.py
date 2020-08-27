@@ -70,7 +70,7 @@ class DateTime:
         """
         if isinstance(value, datetime):
             return value.isoformat()
-        elif isinstance(value, str):
+        if isinstance(value, str):
             try:
                 datetime.fromisoformat(value)
             except ValueError:
