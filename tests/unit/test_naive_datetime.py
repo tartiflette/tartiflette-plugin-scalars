@@ -47,6 +47,7 @@ def test_coerce_input(input_val, exception, output_val):
     [
         (datetime.datetime(2019, 9, 9, 16, 0, 0), "2019-09-09T16:00:00"),
         (datetime.datetime(2018, 8, 16), "2018-08-16T00:00:00"),
+        ("2018-08-16T00:00:00", "2018-08-16T00:00:00"),
     ],
 )
 def test_coerce_output(input_val, output_val):
