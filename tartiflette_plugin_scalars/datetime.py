@@ -12,7 +12,9 @@ def _get_datetime(value: str) -> datetime:
         return value
     if isinstance(value, str):
         return isoparse(value)
-    raise TypeError(f"DateTime cannot represent values other than strings: < {value} >")
+    raise TypeError(
+        f"DateTime cannot represent values other than strings: < {value} >"
+    )
 
 
 def _parse_date(value: str) -> datetime:
