@@ -39,7 +39,7 @@ setup(
     packages=_PACKAGES,
     install_requires=[
         "tartiflette>=1.0.0,<2.0.0",
-        "python-dateutil==2.8.1",
+        "python-dateutil==2.8.2",
         "geojson==2.5.0",
     ],
     tests_require=_TEST_REQUIRE,
