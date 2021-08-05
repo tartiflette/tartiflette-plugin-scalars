@@ -10,8 +10,10 @@ def _parse_json(value: str) -> Any:
     if isinstance(value, str):
         try:
             return json.loads(value)
-        except json.decoder.JSONDecodeError:
-            raise ValueError(f"Value is not a valid JSON value: < {value} >")
+        except json.decoder.JSONDecodeError as err:
+            raise ValueError(
+                f"Value is not a valid JSON value: < {value} >"
+            ) from err
     raise TypeError(
         f"JSON cannot represent values other than strings: < {value} >"
     )

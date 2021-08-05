@@ -9,10 +9,10 @@ def _parse_url(value: Union[str, ParseResult]) -> ParseResult:
     if isinstance(value, str):
         try:
             value = urlparse(value)
-        except AttributeError:
+        except AttributeError as err:
             raise TypeError(
                 f"URL cannot represent values other than strings and ParseResult: < {value} >"
-            )
+            ) from err
     if isinstance(value, ParseResult):
         if value.netloc:
             return value

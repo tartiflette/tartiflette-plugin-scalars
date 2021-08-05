@@ -10,8 +10,10 @@ def _parse_json_object(value: str) -> Any:
     if isinstance(value, str):
         try:
             result = json.loads(value)
-        except json.decoder.JSONDecodeError:
-            raise ValueError(f"Value is not a valid JSON value: < {value} >")
+        except json.decoder.JSONDecodeError as err:
+            raise ValueError(
+                f"Value is not a valid JSON value: < {value} >"
+            ) from err
         if isinstance(result, dict):
             return result
         raise ValueError(f"Value is not a valid JSON object: < {value} >")

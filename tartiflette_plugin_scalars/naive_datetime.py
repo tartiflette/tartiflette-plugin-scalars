@@ -69,8 +69,10 @@ class NaiveDateTime:
         if isinstance(value, str):
             try:
                 datetime.fromisoformat(value)
-            except ValueError:
-                raise ValueError(f"NaiveDateTime cannot represent value: < {value} >")
+            except ValueError as err:
+                raise ValueError(
+                    f"NaiveDateTime cannot represent value: < {value} >"
+                ) from err
             else:
                 return value
         raise TypeError(f"NaiveDateTime cannot represent value: < {value} >")
