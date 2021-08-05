@@ -13,8 +13,8 @@ def _create_uuid(value: str) -> uuid.UUID:
         )
     try:
         return uuid.UUID(value)
-    except ValueError:
-        raise ValueError(f"Value is not a valid UUID: < {value} >")
+    except ValueError as err:
+        raise ValueError(f"Value is not a valid UUID: < {value} >") from err
 
 
 class UUID:

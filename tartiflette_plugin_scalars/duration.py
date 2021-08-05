@@ -19,18 +19,18 @@ def _get_kv(arg: str) -> dict:
 
     try:
         key, value = arg.split("=")
-    except ValueError:
+    except ValueError as err:
         raise ValueError(
             f"Duration argument has more or less than 2 elements: < {arg} >"
-        )
+        ) from err
     else:
         if key in _VALID_KEYS:
             try:
                 return {key: int(value)}
-            except ValueError:
+            except ValueError as err:
                 raise ValueError(
                     f"Duration argument value is not an int: < {arg} >"
-                )
+                ) from err
         else:
             raise ValueError(f"Duration argument has invalid key: < {arg} >")
 
