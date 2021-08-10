@@ -50,7 +50,8 @@ def test_coerce_input(input_val, exception, output_val):
             datetime.datetime(2018, 8, 16, tzinfo=tzutc()),
             "2018-08-16T00:00:00+00:00",
         ),
-        ("2018-08-16T00:00:00+00:00", "2018-08-16T00:00:00+00:00")
+        ("2018-08-16T00:00:00+00:00", "2018-08-16T00:00:00+00:00"),
+        ("2021-07-06 12:56:57.322679", "2021-07-06T12:56:57.322679")
     ],
 )
 def test_coerce_output(input_val, output_val):

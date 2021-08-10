@@ -77,6 +77,4 @@ class DateTime:
                 return isoparse(value).isoformat()
             except ValueError:
                 raise ValueError(f"DateTime cannot represent value: < {value} >")
-            else:
-                return value
         raise TypeError(f"DateTime cannot represent value: < {value} >")
