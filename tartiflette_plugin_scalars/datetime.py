@@ -75,6 +75,8 @@ class DateTime:
         if isinstance(value, str):
             try:
                 return isoparse(value).isoformat()
-            except ValueError:
-                raise ValueError(f"DateTime cannot represent value: < {value} >")
+            except ValueError as err:
+                raise ValueError(
+                    f"DateTime cannot represent value: < {value} >"
+                ) from err
         raise TypeError(f"DateTime cannot represent value: < {value} >")
