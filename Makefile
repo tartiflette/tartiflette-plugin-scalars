@@ -10,7 +10,7 @@ endif
 
 .PHONY: format-import
 format-import:
-	isort -rc tartiflette_plugin_scalars/. tests/. setup.py
+	isort tartiflette_plugin_scalars/. tests/. setup.py
 
 .PHONY: format
 format: format-import
@@ -18,7 +18,7 @@ format: format-import
 
 .PHONY: check-import
 check-import:
-	isort --check-only -rc tartiflette_plugin_scalars/. tests/. setup.py
+	isort --check-only tartiflette_plugin_scalars/. tests/. setup.py
 
 .PHONY: check-format
 check-format:

@@ -12,10 +12,10 @@ def _parse_json(value: str) -> Any:
     if isinstance(value, str):
         try:
             return geojson.loads(value)
-        except json.decoder.JSONDecodeError:
+        except json.decoder.JSONDecodeError as err:
             raise ValueError(
                 f"Value is not a valid GeoJSON value: < {value} >"
-            )
+            ) from err
     raise TypeError(
         f"GeoJSON cannot represent values other than strings: < {value} >"
     )
@@ -65,7 +65,7 @@ class GeoJSON:
         """
         try:
             return geojson.dumps(value, sort_keys=True)
-        except TypeError:
+        except TypeError as err:
             raise ValueError(
                 f"Object of type {type(value).__name__} is not GeoJSON serializable"
-            )
+            ) from err
