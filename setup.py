@@ -40,7 +40,7 @@ setup(
     install_requires=[
         "tartiflette>=1.0.0,<2.0.0",
         "python-dateutil==2.8.2",
-        "geojson==2.5.0",
+        "geojson==3.0.1",
     ],
     tests_require=_TEST_REQUIRE,
     extras_require={"test": _TEST_REQUIRE},
